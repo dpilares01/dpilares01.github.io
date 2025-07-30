@@ -545,7 +545,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Diego Pilares</div>
+            <div class="logo">Diego Pilares Gallego</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="nav-link" data-en="Home" data-es="Inicio">Home</a></li>
                 <li><a href="education.html" class="nav-link" data-en="Education" data-es="Educación">Education</a></li>
@@ -619,10 +619,10 @@
                                 <span class="tech-tag">Control Systems</span>
                             </div>
                             <div class="project-actions">
-                                <button class="btn btn-primary" onclick="openPDF('MSc Dissertation: Hydrogen Engine Optimization', './Files/Projects/msc-dissertation.pdf')">
-                                    📄 View Project
+                                <!--  <button class="btn btn-primary" onclick="openPDF('MSc Dissertation: Hydrogen Engine Optimization', './Files/Projects/msc-dissertation.pdf')"> -->
+                                <button class="btn btn-primary" onclick="">
+                                    📄 Project in progress
                                 </button>
-                                <a href="#" class="btn btn-secondary">🔗 Details</a>
                             </div>
                         </div>
                     </div>
@@ -648,10 +648,9 @@
                                 <span class="tech-tag">FIA Regulations</span>
                             </div>
                             <div class="project-actions">
-                                <button class="btn btn-primary" onclick="openPDF('F1 Compliance and Setup Study', './Files/Projects/f1-compliance-study.pdf')">
+                                <button class="btn btn-primary" onclick="openPDF('F1 Compliance and Setup Study', 'Files/Projects/Laptime_Simulation/ENGR7008_CW2.pdf')">
                                     📄 View Project
                                 </button>
-                                <a href="#" class="btn btn-secondary">🔗 Details</a>
                             </div>
                         </div>
                     </div>
@@ -677,10 +676,9 @@
                                 <span class="tech-tag">LMGT3 Regulations</span>
                             </div>
                             <div class="project-actions">
-                                <button class="btn btn-primary" onclick="openPDF('LMGT3 Aerodynamics Design', './Files/Projects/lmgt3-aero-design.pdf')">
+                                <button class="btn btn-primary" onclick="openPDF('LMGT3 Aerodynamics Design', 'Files/Projects/Aerodinamics/ENGR7006_CW2.pdf')">
                                     📄 View Project
                                 </button>
-                                <a href="#" class="btn btn-secondary">🔗 Details</a>
                             </div>
                         </div>
                     </div>
@@ -706,10 +704,9 @@
                                 <span class="tech-tag">Optimization</span>
                             </div>
                             <div class="project-actions">
-                                <button class="btn btn-primary" onclick="openPDF('Suspension Dynamics Optimization', './Files/Projects/suspension-dynamics.pdf')">
+                                <button class="btn btn-primary" onclick="openPDF('Suspension Dynamics Optimization', 'Files/Projects/Adv_Vehicle_Dynamics/ENGR7015_CW2.pdf')">
                                     📄 View Project
                                 </button>
-                                <a href="#" class="btn btn-secondary">🔗 Details</a>
                             </div>
                         </div>
                     </div>
@@ -738,7 +735,6 @@
                                 <button class="btn btn-primary" onclick="openPDF('Carbon Fiber Rim Design', './Files/Projects/carbon-fiber-rim.pdf')">
                                     📄 View Project
                                 </button>
-                                <a href="#" class="btn btn-secondary">🔗 Details</a>
                             </div>
                         </div>
                     </div>
@@ -767,7 +763,6 @@
                                 <button class="btn btn-primary" onclick="openPDF('Brake Cooling System Design', './Files/Projects/brake-cooling-gr86.pdf')">
                                     📄 View Project
                                 </button>
-                                <a href="#" class="btn btn-secondary">🔗 Details</a>
                             </div>
                         </div>
                     </div>
@@ -778,7 +773,7 @@
             <div class="lang-content" id="projects-es">
                 <h2 class="section-title">Proyectos Destacados</h2>
                 
-                <!-- Filter Section -->
+                <!-- Filter Section (Spanish) -->
                 <div class="filter-section">
                     <div class="filter-buttons">
                         <button class="filter-btn active" onclick="filterProjects('all')">Todos los Proyectos</button>
@@ -790,8 +785,7 @@
                 </div>
 
                 <div class="projects-grid">
-                    <!-- Spanish versions of projects with translated content -->
-                    <!-- Project 1: MSc Dissertation -->
+                    <!-- Spanish Project 1: MSc Dissertation -->
                     <div class="project-card" data-category="dissertation simulation">
                         <div class="project-header">
                             <div class="project-category">Tesis de Maestría</div>
@@ -812,14 +806,153 @@
                                 <span class="tech-tag">Sistemas de Control</span>
                             </div>
                             <div class="project-actions">
-                                <button class="btn btn-primary" onclick="openPDF('Tesis de Maestría: Optimización Motor Hidrógeno', './Files/Projects/msc-dissertation.pdf')">
-                                    📄 Ver Proyecto
+                    <!-- <button class="btn btn-primary" onclick="openPDF('Tesis de Maestría: Optimización Motor Hidrógeno', './Files/Projects/msc-dissertation.pdf')"> -->
+                                <button class="btn btn-primary" onclick="">            
+                                    📄 Proyecto en proceso
                                 </button>
-                                <a href="#" class="btn btn-secondary">🔗 Detalles</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Additional Spanish project cards would follow the same pattern -->
+
+                    <!-- Spanish Project 2: F1 Compliance Study -->
+                    <div class="project-card" data-category="simulation analysis">
+                        <div class="project-header">
+                            <div class="project-category">Dinámica Vehicular</div>
+                            <h3 class="project-title">Estudio de Cumplimiento y Configuración F1 Próxima Generación</h3>
+                            <div class="project-duration">Abr. 2025 – May. 2025</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Estudio integral modificando un vehículo F1 especificación 2024 para cumplir con las regulaciones 
+                                técnicas FIA 2026. Análisis de rendimiento a través de simulaciones de skid-pad y pista con 
+                                optimización de suspensión, neumáticos y balance de frenos usando validación de datos de telemetría.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">AVL VSM</span>
+                                <span class="tech-tag">AVL Drive Race</span>
+                                <span class="tech-tag">Análisis de Telemetría</span>
+                                <span class="tech-tag">Configuración Vehicular</span>
+                                <span class="tech-tag">Regulaciones FIA</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Estudio de Cumplimiento y Configuración F1', 'Files/Projects/Laptime_Simulation/ENGR7008_CW2.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spanish Project 3: LMGT3 Aerodynamics -->
+                    <div class="project-card" data-category="design analysis">
+                        <div class="project-header">
+                            <div class="project-category">Aerodinámica</div>
+                            <h3 class="project-title">Diseño de Dispositivos Aerodinámicos Delanteros LMGT3 DrivAer</h3>
+                            <div class="project-duration">Oct. 2024 – Dic. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Diseño y validación CFD de dispositivos aerodinámicos delanteros para un modelo DrivAer siguiendo 
+                                regulaciones LMGT3. Evaluación integral del rendimiento aerodinámico y desarrollo de metodología 
+                                de validación en túnel de viento.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">Star CCM+</span>
+                                <span class="tech-tag">Análisis CFD</span>
+                                <span class="tech-tag">Túnel de Viento</span>
+                                <span class="tech-tag">Regulaciones LMGT3</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Diseño Aerodinámico LMGT3', 'Files/Projects/Aerodinamics/ENGR7006_CW2.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spanish Project 4: Suspension Dynamics -->
+                    <div class="project-card" data-category="simulation analysis">
+                        <div class="project-header">
+                            <div class="project-category">Dinámica Vehicular</div>
+                            <h3 class="project-title">Dinámica de Suspensión y Optimización de Marcha</h3>
+                            <div class="project-duration">Oct. 2024 – Dic. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Desarrollo y análisis de modelos de vehículo de bicicleta y doble vía con optimización integral 
+                                del sistema de suspensión. Modelos de suspensión multi-DOF analizados en varios escenarios de 
+                                curvas y cargas verticales para mejora del rendimiento.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">MSC Adams</span>
+                                <span class="tech-tag">Dinámica Vehicular</span>
+                                <span class="tech-tag">Diseño de Suspensión</span>
+                                <span class="tech-tag">Sistemas Multi-DOF</span>
+                                <span class="tech-tag">Optimización</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Optimización Dinámica de Suspensión', 'Files/Projects/Adv_Vehicle_Dynamics/ENGR7015_CW2.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spanish Project 5: BEng Dissertation -->
+                    <div class="project-card" data-category="dissertation design">
+                        <div class="project-header">
+                            <div class="project-category">Tesis de Grado</div>
+                            <h3 class="project-title">Llanta de Fibra de Carbono Centre-lock para Formula Student</h3>
+                            <div class="project-duration">Ago. 2024 – Ene. 2025</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Diseño completo y análisis de una llanta ligera de fibra de carbono con sistema centre-lock 
+                                integrado para aplicaciones Formula Student. Análisis estructural FEA integral y selección 
+                                de materiales cumpliendo con regulaciones ISO y Formula Student.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">Análisis FEA</span>
+                                <span class="tech-tag">Fibra de Carbono</span>
+                                <span class="tech-tag">Granta Materials</span>
+                                <span class="tech-tag">Formula Student</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Diseño de Llanta de Fibra de Carbono', './Files/Projects/carbon-fiber-rim.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spanish Project 6: Brake Cooling -->
+                    <div class="project-card" data-category="design analysis">
+                        <div class="project-header">
+                            <div class="project-category">Gestión Térmica</div>
+                            <h3 class="project-title">Diseño de Conducto de Refrigeración de Frenos para GR86</h3>
+                            <div class="project-duration">Sep. 2023 – Ene. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Diseño de sistema de refrigeración de frenos orientado a carreras para Toyota GR86. Flujo 
+                                completo desde escaneado 3D para integración precisa, modelado CAD, prototipado rápido y 
+                                análisis FEA para optimización de flujo de aire y mejora del rendimiento de refrigeración.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">EXScan 3D</span>
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">Impresión 3D</span>
+                                <span class="tech-tag">FEA</span>
+                                <span class="tech-tag">Análisis Térmico</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Diseño Sistema Refrigeración Frenos', './Files/Projects/brake-cooling-gr86.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -832,3 +965,180 @@
                 <div class="pdf-title" id="pdfTitle">Project Document</div>
                 <button class="close-btn" onclick="closePDF()">&times;</button>
             </div>
+            <div class="pdf-viewer">
+                <div class="pdf-fallback" id="pdfFallback">
+                    <p>Unable to display PDF. <a href="#" id="pdfDownloadLink" target="_blank">Click here to download the document</a></p>
+                </div>
+                <embed id="pdfEmbed" class="pdf-embed" type="application/pdf" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="mailto:dpilares01@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/diegopilares/" target="_blank">LinkedIn</a>
+            </div>
+            <!-- English Content -->
+            <div class="lang-content active" id="footer-en">
+                <p>&copy; 2025 Diego Pilares Gallego | Engineering Portfolio</p>
+            </div>
+            <!-- Spanish Content -->
+            <div class="lang-content" id="footer-es">
+                <p>&copy; 2025 Diego Pilares Gallego | Portafolio de Ingeniería</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function switchLanguage(lang) {
+            // Hide all language content
+            const langContents = document.querySelectorAll('.lang-content');
+            langContents.forEach(content => content.classList.remove('active'));
+            
+            // Show selected language content
+            const selectedContents = document.querySelectorAll(`#hero-${lang}, #projects-${lang}, #footer-${lang}`);
+            selectedContents.forEach(content => content.classList.add('active'));
+            
+            // Update navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                const text = link.getAttribute(`data-${lang}`);
+                if (text) {
+                    link.textContent = text;
+                }
+            });
+            
+            // Update language buttons
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Find and activate the correct button
+            const activeBtn = Array.from(langButtons).find(btn => 
+                btn.textContent.toLowerCase() === lang.toLowerCase()
+            );
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+            
+            // Update document language
+            document.documentElement.lang = lang;
+            
+            // Store language preference (with error handling)
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch (e) {
+                console.log('Cannot save language preference');
+            }
+        }
+
+        // Basic filter functionality
+        function filterProjects(category) {
+            const projectCards = document.querySelectorAll('.project-card');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // Update button states
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Simple filter logic
+            projectCards.forEach(card => {
+                const cardCategories = card.getAttribute('data-category').split(' ');
+                if (category === 'all' || cardCategories.includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // PDF Modal functionality
+        function openPDF(title, pdfPath) {
+            const modal = document.getElementById('pdfModal');
+            const pdfTitle = document.getElementById('pdfTitle');
+            const pdfEmbed = document.getElementById('pdfEmbed');
+            const pdfFallback = document.getElementById('pdfFallback');
+            const downloadLink = document.getElementById('pdfDownloadLink');
+            
+            pdfTitle.textContent = title;
+            downloadLink.href = pdfPath;
+            
+            // Try to embed PDF
+            pdfEmbed.src = pdfPath;
+            pdfEmbed.style.display = 'block';
+            pdfFallback.style.display = 'none';
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Handle PDF load error
+            pdfEmbed.onerror = function() {
+                pdfEmbed.style.display = 'none';
+                pdfFallback.style.display = 'block';
+            };
+        }
+
+        function closePDF() {
+            const modal = document.getElementById('pdfModal');
+            const pdfEmbed = document.getElementById('pdfEmbed');
+            
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            pdfEmbed.src = '';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('pdfModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePDF();
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks) {
+                navLinks.classList.toggle('active');
+            }
+        }
+
+        // Load preferred language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const preferredLang = localStorage.getItem('preferredLanguage') || 'en';
+                if (preferredLang === 'es') {
+                    switchLanguage('es');
+                }
+            } catch (e) {
+                console.log('localStorage not available');
+            }
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (nav) {
+                if (window.scrollY > 100) {
+                    nav.style.background = 'rgba(0, 0, 0, 0.98)';
+                } else {
+                    nav.style.background = 'rgba(0, 0, 0, 0.95)';
+                }
+            }
+        });
+
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('pdfModal');
+                if (modal.classList.contains('active')) {
+                    closePDF();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
