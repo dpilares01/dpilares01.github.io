@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Education - Diego Pilares Gallego</title>
-    <meta name="description" content="Education background of Diego Pilares Gallego - MSc Motorsport Engineering at Oxford Brookes University and BEng Automotive Engineering.">
-    <meta name="keywords" content="motorsport engineering education, Oxford Brookes, automotive engineering, Formula Student">
+    <title>Projects - Diego Pilares Gallego</title>
+    <meta name="description" content="Engineering projects by Diego Pilares Gallego - Motorsport engineering, vehicle dynamics, and automotive innovation projects.">
+    <meta name="keywords" content="motorsport projects, vehicle dynamics, automotive engineering, Formula Student, CAD design">
     <meta name="author" content="Diego Pilares Gallego">
     <style>
         * {
@@ -167,8 +167,8 @@
             }
         }
 
-        /* Education Section */
-        .education-section {
+        /* Projects Section */
+        .projects-section {
             padding: 100px 0;
             background: #f8f9fa;
         }
@@ -179,167 +179,6 @@
             padding: 0 2rem;
         }
 
-        .education-timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, #00d4ff, #1e3c72);
-            transform: translateX(-50%);
-        }
-
-        .education-item {
-            position: relative;
-            margin-bottom: 4rem;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .education-item:nth-child(1) { animation-delay: 0.2s; }
-        .education-item:nth-child(2) { animation-delay: 0.4s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .education-content {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            position: relative;
-            width: 45%;
-            transition: all 0.3s ease;
-        }
-
-        .education-content:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .education-item:nth-child(odd) .education-content {
-            margin-left: auto;
-        }
-
-        .education-item:nth-child(even) .education-content {
-            margin-right: auto;
-        }
-
-        .education-content::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 20px;
-            height: 20px;
-            background: #00d4ff;
-            border-radius: 50%;
-            transform: translateY(-50%);
-            border: 4px solid white;
-            box-shadow: 0 0 0 4px #00d4ff;
-        }
-
-        .education-item:nth-child(odd) .education-content::before {
-            left: -60px;
-        }
-
-        .education-item:nth-child(even) .education-content::before {
-            right: -60px;
-        }
-
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .degree-info h3 {
-            font-size: 1.8rem;
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
-        }
-
-        .university {
-            font-size: 1.2rem;
-            color: #00d4ff;
-            font-weight: bold;
-        }
-
-        .location {
-            color: #666;
-            font-style: italic;
-        }
-
-        .duration {
-            background: linear-gradient(135deg, #00d4ff, #1e3c72);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .grade {
-            background: #e8f5e8;
-            color: #2d5a2d;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .modules {
-            margin-top: 1.5rem;
-        }
-
-        .modules h4 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 0.8rem;
-        }
-
-        .module-item {
-            background: #f8f9fa;
-            padding: 0.6rem 1rem;
-            border-radius: 8px;
-            border-left: 4px solid #00d4ff;
-            transition: all 0.3s ease;
-        }
-
-        .module-item:hover {
-            background: #e3f2fd;
-            transform: translateX(5px);
-        }
-
-        /* Skills Section */
-        .skills-gained {
-            padding: 80px 0;
-            background: white;
-        }
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -347,48 +186,237 @@
             color: #1e3c72;
         }
 
-        .skills-grid {
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .skill-category {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border-top: 4px solid #00d4ff;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-category h3 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
-        }
-
-        .skill-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skill-list li {
+        .project-card {
             background: white;
-            margin: 0.5rem 0;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            border-left: 3px solid #00d4ff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .project-category {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-duration {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #00d4ff;
+            color: #1e3c72;
+        }
+
+        .btn-primary:hover {
+            background: #0099cc;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1e3c72;
+            border: 2px solid #1e3c72;
+        }
+
+        .btn-secondary:hover {
+            background: #1e3c72;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* PDF Modal */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow: auto;
+        }
+
+        .pdf-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .pdf-container {
+            background: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1000px;
+            height: 90vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-header {
+            background: #1e3c72;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pdf-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .pdf-viewer {
+            flex: 1;
+            padding: 1rem;
+            overflow: auto;
+        }
+
+        .pdf-embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .pdf-fallback {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .pdf-fallback a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #1e3c72;
+            color: #1e3c72;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #1e3c72;
+            color: white;
         }
 
         /* Footer */
@@ -451,32 +479,26 @@
                 font-size: 2.2rem;
             }
 
-            .education-timeline::before {
-                left: 20px;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
 
-            .education-content {
-                width: calc(100% - 60px);
-                margin-left: 60px !important;
-                margin-right: 0 !important;
-            }
-
-            .education-content::before {
-                left: -60px !important;
-                right: auto !important;
-            }
-
-            .education-header {
+            .filter-buttons {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
 
-            .module-grid {
-                grid-template-columns: 1fr;
+            .project-actions {
+                flex-direction: column;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .pdf-container {
+                width: 95%;
+                height: 95vh;
+            }
+
+            .pdf-modal {
+                padding: 1rem;
             }
 
             .footer-links {
@@ -493,17 +515,41 @@
         .lang-content.active {
             display: block;
         }
+
+        /* Animation for project cards */
+        .project-card {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Diego Pilares Gallego</div>
+            <div class="logo">Diego Pilares</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="nav-link" data-en="Home" data-es="Inicio">Home</a></li>
-                <li><a href="education.html" class="nav-link active" data-en="Education" data-es="Educación">Education</a></li>
-                <li><a href="projects.html" class="nav-link" data-en="Projects" data-es="Proyectos">Projects</a></li>
+                <li><a href="education.html" class="nav-link" data-en="Education" data-es="Educación">Education</a></li>
+                <li><a href="projects.html" class="nav-link active" data-en="Projects" data-es="Proyectos">Projects</a></li>
                 <li><a href="skills.html" class="nav-link" data-en="Skills" data-es="Habilidades">Skills</a></li>
                 <li>
                     <div class="language-switcher">
@@ -521,314 +567,268 @@
         <div class="page-hero-content">
             <!-- English Content -->
             <div class="lang-content active" id="hero-en">
-                <h1>Educational Journey</h1>
-                <p>Academic excellence in motorsport and automotive engineering across two prestigious institutions</p>
+                <h1>Engineering Projects</h1>
+                <p>Innovative solutions in motorsport engineering, vehicle dynamics, and automotive technology</p>
             </div>
             
             <!-- Spanish Content -->
             <div class="lang-content" id="hero-es">
-                <h1>Trayectoria Educativa</h1>
-                <p>Excelencia académica en ingeniería del motorsport y automotriz en dos instituciones prestigiosas</p>
+                <h1>Proyectos de Ingeniería</h1>
+                <p>Soluciones innovadoras en ingeniería del motorsport, dinámica vehicular y tecnología automotriz</p>
             </div>
         </div>
     </section>
 
-    <!-- Education Timeline -->
-    <section class="education-section">
-        <div class="container">
-            <div class="education-timeline">
-                <!-- MSc Motorsport Engineering -->
-                <div class="education-item">
-                    <div class="education-content">
-                        <!-- English Content -->
-                        <div class="lang-content active" id="msc-en">
-                            <div class="education-header">
-                                <div class="degree-info">
-                                    <h3>MSc Motorsport Engineering</h3>
-                                    <div class="university">Oxford Brookes University</div>
-                                    <div class="location">Oxford, United Kingdom</div>
-                                </div>
-                                <div class="duration">Sept. 2024 – Sept. 2025</div>
-                            </div>
-                            <div class="grade">Expected Mark: Distinction</div>
-                            <div class="modules">
-                                <h4>Key Modules:</h4>
-                                <div class="module-grid">
-                                    <div class="module-item">Advanced Vehicle Dynamics</div>
-                                    <div class="module-item">Advanced Vehicle Aerodynamics</div>
-                                    <div class="module-item">Laptime Simulation and Race Engineering</div>
-                                    <div class="module-item">Composite Design and Impact Modelling</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Spanish Content -->
-                        <div class="lang-content" id="msc-es">
-                            <div class="education-header">
-                                <div class="degree-info">
-                                    <h3>MSc Ingeniería del Motorsport</h3>
-                                    <div class="university">Oxford Brookes University</div>
-                                    <div class="location">Oxford, Reino Unido</div>
-                                </div>
-                                <div class="duration">Sept. 2024 – Sept. 2025</div>
-                            </div>
-                            <div class="grade">Calificación Esperada: Distinción</div>
-                            <div class="modules">
-                                <h4>Módulos Principales:</h4>
-                                <div class="module-grid">
-                                    <div class="module-item">Dinámica Vehicular Avanzada</div>
-                                    <div class="module-item">Aerodinámica Vehicular Avanzada</div>
-                                    <div class="module-item">Simulación de Tiempo de Vuelta e Ingeniería de Carreras</div>
-                                    <div class="module-item">Diseño de Compuestos y Modelado de Impacto</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BEng Automotive Engineering -->
-                <div class="education-item">
-                    <div class="education-content">
-                        <!-- English Content -->
-                        <div class="lang-content active" id="beng-en">
-                            <div class="education-header">
-                                <div class="degree-info">
-                                    <h3>BEng Automotive Engineering</h3>
-                                    <div class="university">Universidad Francisco de Vitoria – Motor & Sport Institute</div>
-                                    <div class="location">Madrid, Spain</div>
-                                </div>
-                                <div class="duration">Sept. 2019 – Jan. 2025</div>
-                            </div>
-                            <div class="grade">Final Mark: 6.91/10 (2:1 UK equivalent)</div>
-                            <div class="modules">
-                                <h4>Key Modules:</h4>
-                                <div class="module-grid">
-                                    <div class="module-item">Vehicle Dynamics</div>
-                                    <div class="module-item">Design, Prototyping and Testing</div>
-                                    <div class="module-item">Transmission and Gearbox</div>
-                                    <div class="module-item">Suspension Systems</div>
-                                    <div class="module-item">Steering and Braking Systems</div>
-                                    <div class="module-item">Powertrain Engineering</div>
-                                    <div class="module-item">Aerodynamics</div>
-                                    <div class="module-item">Fluid Dynamics</div>
-                                    <div class="module-item">Thermodynamics</div>
-                                    <div class="module-item">Machines and Mechanisms Theory</div>
-                                    <div class="module-item">Advanced Materials</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Spanish Content -->
-                        <div class="lang-content" id="beng-es">
-                            <div class="education-header">
-                                <div class="degree-info">
-                                    <h3>Grado en Ingeniería Automotriz</h3>
-                                    <div class="university">Universidad Francisco de Vitoria – Motor & Sport Institute</div>
-                                    <div class="location">Madrid, España</div>
-                                </div>
-                                <div class="duration">Sept. 2019 – Ene. 2025</div>
-                            </div>
-                            <div class="grade">Nota Final: 6.91/10 (equivalente a 2:1 UK)</div>
-                            <div class="modules">
-                                <h4>Módulos Principales:</h4>
-                                <div class="module-grid">
-                                    <div class="module-item">Dinámica Vehicular</div>
-                                    <div class="module-item">Diseño, Prototipado y Ensayos</div>
-                                    <div class="module-item">Transmisión y Caja de Cambios</div>
-                                    <div class="module-item">Sistemas de Suspensión</div>
-                                    <div class="module-item">Sistemas de Dirección y Frenado</div>
-                                    <div class="module-item">Ingeniería del Tren de Potencia</div>
-                                    <div class="module-item">Aerodinámica</div>
-                                    <div class="module-item">Dinámica de Fluidos</div>
-                                    <div class="module-item">Termodinámica</div>
-                                    <div class="module-item">Teoría de Máquinas y Mecanismos</div>
-                                    <div class="module-item">Materiales Avanzados</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Gained -->
-    <section class="skills-gained">
+    <!-- Projects Section -->
+    <section class="projects-section">
         <div class="container">
             <!-- English Content -->
-            <div class="lang-content active" id="skills-en">
-                <h2 class="section-title">Skills & Knowledge Gained</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <div class="skill-icon">🔬</div>
-                        <h3>Technical Analysis</h3>
-                        <ul class="skill-list">
-                            <li>Vehicle Dynamics Simulation</li>
-                            <li>Aerodynamic Analysis</li>
-                            <li>Data Acquisition & Analysis</li>
-                            <li>Performance Optimization</li>
-                        </ul>
+            <div class="lang-content active" id="projects-en">
+                <h2 class="section-title">Featured Projects</h2>
+                
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+                        <button class="filter-btn" onclick="filterProjects('dissertation')">Dissertations</button>
+                        <button class="filter-btn" onclick="filterProjects('simulation')">Simulation</button>
+                        <button class="filter-btn" onclick="filterProjects('design')">Design</button>
+                        <button class="filter-btn" onclick="filterProjects('analysis')">Analysis</button>
                     </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">⚙️</div>
-                        <h3>Engineering Design</h3>
-                        <ul class="skill-list">
-                            <li>CAD Modeling & Design</li>
-                            <li>FEA & Structural Analysis</li>
-                            <li>Composite Materials</li>
-                            <li>Prototyping & Testing</li>
-                        </ul>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Project 1: MSc Dissertation -->
+                    <div class="project-card" data-category="dissertation simulation">
+                        <div class="project-header">
+                            <div class="project-category">MSc Dissertation</div>
+                            <h3 class="project-title">Hydrogen-fuelled LTC/CAI-IC Engine Control Strategy Optimization</h3>
+                            <div class="project-duration">Jan. 2025 – Present</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Advanced engine control strategy development focused on hydrogen-fueled Low-Temperature Combustion engines. 
+                                Using GT-Suite for 1D engine simulation and machine learning algorithms for optimization to maximize 
+                                efficiency while reducing NOx emissions.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">GT-Suite</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">DOE</span>
+                                <span class="tech-tag">Hydrogen Combustion</span>
+                                <span class="tech-tag">Control Systems</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('MSc Dissertation: Hydrogen Engine Optimization', './Files/Projects/msc-dissertation.pdf')">
+                                    📄 View Project
+                                </button>
+                                <a href="#" class="btn btn-secondary">🔗 Details</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">🏎️</div>
-                        <h3>Motorsport Systems</h3>
-                        <ul class="skill-list">
-                            <li>Race Engineering</li>
-                            <li>Laptime Simulation</li>
-                            <li>Vehicle Setup</li>
-                            <li>Performance Data Analysis</li>
-                        </ul>
+
+                    <!-- Project 2: F1 Compliance Study -->
+                    <div class="project-card" data-category="simulation analysis">
+                        <div class="project-header">
+                            <div class="project-category">Vehicle Dynamics</div>
+                            <h3 class="project-title">Next-gen F1 Compliance and Setup Study</h3>
+                            <div class="project-duration">Apr. 2025 – May 2025</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Comprehensive study modifying a 2024-spec F1 vehicle to meet 2026 FIA technical regulations. 
+                                Performance analysis through skid-pad and on-track simulations with suspension, tire, and brake 
+                                balance optimization using telemetry data validation.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">AVL VSM</span>
+                                <span class="tech-tag">AVL Drive Race</span>
+                                <span class="tech-tag">Telemetry Analysis</span>
+                                <span class="tech-tag">Vehicle Setup</span>
+                                <span class="tech-tag">FIA Regulations</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('F1 Compliance and Setup Study', './Files/Projects/f1-compliance-study.pdf')">
+                                    📄 View Project
+                                </button>
+                                <a href="#" class="btn btn-secondary">🔗 Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: LMGT3 Aerodynamics -->
+                    <div class="project-card" data-category="design analysis">
+                        <div class="project-header">
+                            <div class="project-category">Aerodynamics</div>
+                            <h3 class="project-title">LMGT3 DrivAer Front Aero Devices Design</h3>
+                            <div class="project-duration">Oct. 2024 – Dec. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Design and CFD validation of front aerodynamic devices for a DrivAer model following LMGT3 
+                                regulations. Comprehensive aerodynamic performance assessment and wind tunnel validation 
+                                methodology development.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">Star CCM+</span>
+                                <span class="tech-tag">CFD Analysis</span>
+                                <span class="tech-tag">Wind Tunnel</span>
+                                <span class="tech-tag">LMGT3 Regulations</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('LMGT3 Aerodynamics Design', './Files/Projects/lmgt3-aero-design.pdf')">
+                                    📄 View Project
+                                </button>
+                                <a href="#" class="btn btn-secondary">🔗 Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Suspension Dynamics -->
+                    <div class="project-card" data-category="simulation analysis">
+                        <div class="project-header">
+                            <div class="project-category">Vehicle Dynamics</div>
+                            <h3 class="project-title">Suspension Dynamics and Ride Optimization</h3>
+                            <div class="project-duration">Oct. 2024 – Dec. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Development and analysis of bicycle and twin-track vehicle models with comprehensive suspension 
+                                system optimization. Multi-DOF suspension models analyzed across various cornering and vertical 
+                                load scenarios for performance enhancement.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">MSC Adams</span>
+                                <span class="tech-tag">Vehicle Dynamics</span>
+                                <span class="tech-tag">Suspension Design</span>
+                                <span class="tech-tag">Multi-DOF Systems</span>
+                                <span class="tech-tag">Optimization</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Suspension Dynamics Optimization', './Files/Projects/suspension-dynamics.pdf')">
+                                    📄 View Project
+                                </button>
+                                <a href="#" class="btn btn-secondary">🔗 Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: BEng Dissertation -->
+                    <div class="project-card" data-category="dissertation design">
+                        <div class="project-header">
+                            <div class="project-category">BEng Dissertation</div>
+                            <h3 class="project-title">Carbon Fibre Centre-lock Rim for Formula Student</h3>
+                            <div class="project-duration">Aug. 2024 – Jan. 2025</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Complete design and analysis of a lightweight carbon fiber rim with integrated centre-lock 
+                                system for Formula Student applications. Comprehensive FEA structural analysis and material 
+                                selection in compliance with ISO and Formula Student regulations.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">FEA Analysis</span>
+                                <span class="tech-tag">Carbon Fiber</span>
+                                <span class="tech-tag">Granta Materials</span>
+                                <span class="tech-tag">Formula Student</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Carbon Fiber Rim Design', './Files/Projects/carbon-fiber-rim.pdf')">
+                                    📄 View Project
+                                </button>
+                                <a href="#" class="btn btn-secondary">🔗 Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Brake Cooling -->
+                    <div class="project-card" data-category="design analysis">
+                        <div class="project-header">
+                            <div class="project-category">Thermal Management</div>
+                            <h3 class="project-title">Brake Cooling Duct Design for GR86</h3>
+                            <div class="project-duration">Sep. 2023 – Jan. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Race-oriented brake cooling system design for Toyota GR86. Complete workflow from 3D scanning 
+                                for precise integration, CAD modeling, rapid prototyping, and FEA analysis for airflow 
+                                optimization and cooling performance enhancement.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">EXScan 3D</span>
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">3D Printing</span>
+                                <span class="tech-tag">FEA</span>
+                                <span class="tech-tag">Thermal Analysis</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Brake Cooling System Design', './Files/Projects/brake-cooling-gr86.pdf')">
+                                    📄 View Project
+                                </button>
+                                <a href="#" class="btn btn-secondary">🔗 Details</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Spanish Content -->
-            <div class="lang-content" id="skills-es">
-                <h2 class="section-title">Habilidades y Conocimientos Adquiridos</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <div class="skill-icon">🔬</div>
-                        <h3>Análisis Técnico</h3>
-                        <ul class="skill-list">
-                            <li>Simulación de Dinámica Vehicular</li>
-                            <li>Análisis Aerodinámico</li>
-                            <li>Adquisición y Análisis de Datos</li>
-                            <li>Optimización del Rendimiento</li>
-                        </ul>
+            <div class="lang-content" id="projects-es">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterProjects('all')">Todos los Proyectos</button>
+                        <button class="filter-btn" onclick="filterProjects('dissertation')">Tesis</button>
+                        <button class="filter-btn" onclick="filterProjects('simulation')">Simulación</button>
+                        <button class="filter-btn" onclick="filterProjects('design')">Diseño</button>
+                        <button class="filter-btn" onclick="filterProjects('analysis')">Análisis</button>
                     </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">⚙️</div>
-                        <h3>Diseño de Ingeniería</h3>
-                        <ul class="skill-list">
-                            <li>Modelado y Diseño CAD</li>
-                            <li>FEA y Análisis Estructural</li>
-                            <li>Materiales Compuestos</li>
-                            <li>Prototipado y Ensayos</li>
-                        </ul>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Spanish versions of projects with translated content -->
+                    <!-- Project 1: MSc Dissertation -->
+                    <div class="project-card" data-category="dissertation simulation">
+                        <div class="project-header">
+                            <div class="project-category">Tesis de Maestría</div>
+                            <h3 class="project-title">Optimización de Estrategia de Control de Motor LTC/CAI-IC con Hidrógeno</h3>
+                            <div class="project-duration">Ene. 2025 – Presente</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Desarrollo avanzado de estrategia de control de motor enfocado en motores de Combustión a Baja Temperatura 
+                                alimentados con hidrógeno. Usando GT-Suite para simulación de motor 1D y algoritmos de aprendizaje 
+                                automático para optimización para maximizar eficiencia y reducir emisiones de NOx.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">GT-Suite</span>
+                                <span class="tech-tag">Aprendizaje Automático</span>
+                                <span class="tech-tag">DOE</span>
+                                <span class="tech-tag">Combustión de Hidrógeno</span>
+                                <span class="tech-tag">Sistemas de Control</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Tesis de Maestría: Optimización Motor Hidrógeno', './Files/Projects/msc-dissertation.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                                <a href="#" class="btn btn-secondary">🔗 Detalles</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">🏎️</div>
-                        <h3>Sistemas de Motorsport</h3>
-                        <ul class="skill-list">
-                            <li>Ingeniería de Carreras</li>
-                            <li>Simulación de Tiempo de Vuelta</li>
-                            <li>Configuración Vehicular</li>
-                            <li>Análisis de Datos de Rendimiento</li>
-                        </ul>
-                    </div>
+                    <!-- Additional Spanish project cards would follow the same pattern -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="mailto:dpilares01@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/diegopilares/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/diegopilares" target="_blank">GitHub</a>
+    <!-- PDF Modal -->
+    <div class="pdf-modal" id="pdfModal">
+        <div class="pdf-container">
+            <div class="pdf-header">
+                <div class="pdf-title" id="pdfTitle">Project Document</div>
+                <button class="close-btn" onclick="closePDF()">&times;</button>
             </div>
-            <!-- English Content -->
-            <div class="lang-content active" id="footer-en">
-                <p>&copy; 2025 Diego Pilares Gallego | Motorsport Engineering Portfolio</p>
-            </div>
-            <!-- Spanish Content -->
-            <div class="lang-content" id="footer-es">
-                <p>&copy; 2025 Diego Pilares Gallego | Portafolio de Ingeniería del Motorsport</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Language switching functionality
-        function switchLanguage(lang) {
-            // Hide all language content
-            const langContents = document.querySelectorAll('.lang-content');
-            langContents.forEach(content => content.classList.remove('active'));
-            
-            // Show selected language content
-            const selectedContents = document.querySelectorAll(`#hero-${lang}, #msc-${lang}, #beng-${lang}, #skills-${lang}, #footer-${lang}`);
-            selectedContents.forEach(content => content.classList.add('active'));
-            
-            // Update navigation links
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                const text = link.getAttribute(`data-${lang}`);
-                if (text) {
-                    link.textContent = text;
-                }
-            });
-            
-            // Update language buttons
-            const langButtons = document.querySelectorAll('.lang-btn');
-            langButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Find and activate the correct button
-            const activeBtn = Array.from(langButtons).find(btn => 
-                btn.textContent.toLowerCase() === lang.toLowerCase()
-            );
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-            }
-            
-            // Update document language
-            document.documentElement.lang = lang;
-            
-            // Store language preference (with error handling)
-            try {
-                localStorage.setItem('preferredLanguage', lang);
-            } catch (e) {
-                console.log('Cannot save language preference');
-            }
-        }
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            if (navLinks) {
-                navLinks.classList.toggle('active');
-            }
-        }
-
-        // Load preferred language on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            try {
-                const preferredLang = localStorage.getItem('preferredLanguage') || 'en';
-                if (preferredLang === 'es') {
-                    // Simulate clicking the Spanish button
-                    const esBtn = document.querySelector('.lang-btn:last-child');
-                    if (esBtn) {
-                        esBtn.click();
-                    }
-                }
-            } catch (e) {
-                // Fallback if localStorage is not available
-                console.log('localStorage not available');
-            }
-        });
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (nav) {
-                if (window.scrollY > 100) {
-                    nav.style.background = 'rgba(0, 0, 0, 0.98)';
-                } else {
-                    nav.style.background = 'rgba(0, 0, 0, 0.95)';
-                }
-            }
-        });
-    </script>
-</body>
-</html>
