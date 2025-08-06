@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CV - Diego Pilares Gallego</title>
+    <meta name="description" content="Curriculum Vitae of Diego Pilares Gallego - MSc Motorsport Engineering Student at Oxford Brookes University">
+    <meta name="keywords" content="CV, resume, motorsport engineering, automotive, vehicle dynamics, Oxford Brookes">
+    <meta name="author" content="Diego Pilares Gallego">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #00d4ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00d4ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: #00d4ff;
+            color: black;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            height: 60vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .page-hero-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: slideUp 1s ease 0.3s forwards;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0;
+            animation: slideUp 1s ease 0.5s forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CV Actions */
+        .cv-actions {
+            text-align: center;
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .cv-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #00d4ff;
+            color: #1e3c72;
+        }
+
+        .btn-primary:hover {
+            background: #0099cc;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1e3c72;
+            border: 2px solid #1e3c72;
+        }
+
+        .btn-secondary:hover {
+            background: #1e3c72;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* CV Content */
+        .cv-content {
+            padding: 2rem 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cv-header {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .cv-name {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-title {
+            font-size: 1.3rem;
+            color: #00d4ff;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .contact-item a {
+            color: #1e3c72;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #00d4ff;
+        }
+
+        .cv-section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .cv-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 1.5rem 2rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            text-align: justify;
+        }
+
+        .experience-item,
+        .education-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .experience-item:last-child,
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            color: #1e3c72;
+            font-weight: bold;
+        }
+
+        .company,
+        .university {
+            font-size: 1.1rem;
+            color: #00d4ff;
+            margin: 0.2rem 0;
+        }
+
+        .location {
+            color: #666;
+            font-style: italic;
+        }
+
+        .duration {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        .grade {
+            background: #e8f5e8;
+            color: #2d5a2d;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: bold;
+            margin: 0.5rem 0;
+            display: inline-block;
+        }
+
+        .item-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .item-description ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .item-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .skill-category h4 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .projects-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-preview {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .project-preview h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .language-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .language-name {
+            font-size: 1.2rem;
+            color: #1e3c72;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .language-level {
+            font-size: 1rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .language-certs {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .interests-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .interest-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .interest-item h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .interest-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .cv-name {
+                font-size: 2rem;
+            }
+
+            .cv-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .section-content {
+                padding: 1.5rem;
+            }
+
+            .cv-header {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Language content hiding */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Print styles */
+        @media print {
+            nav,
+            .page-hero,
+            .cv-actions,
+            footer {
+                display: none;
+            }
+
+            .cv-content {
+                padding: 0;
+                background: white;
+            }
+
+            .cv-section {
+                box-shadow: none;
+                page-break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+
+            .section-header {
+                background: #1e3c72 !important;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Diego Pilares Gallego</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="education.html" class="nav-link" data-en="Education" data-es="Educación">Education</a></li>
+                <li><a href="projects.html" class="nav-link" data-en="Projects" data-es="Proyectos">Projects</a></li>
+                <li><a href="cv.html" class="nav-link active" data-en="CV" data-es="CV">CV</a></li>
+                <li>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+                        <button class="lang-btn" onclick="switchLanguage('es')">ES</button>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <!-- English Content -->
+            <div class="lang-content active" id="hero-en">
+                <h1>Curriculum Vitae</h1>
+                <p>Comprehensive overview of my professional experience and academic achievements</p>
+            </div>
+            
+            <!-- Spanish Content -->
+            <div class="lang-content" id="hero-es">
+                <h1>Curriculum Vitae</h1>
+                <p>Resumen integral de mi experiencia profesional y logros académicos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Actions -->
+    <section class="cv-actions">
+        <div class="cv-buttons">
+            <!-- English Content -->
+            <div class="lang-content active" id="actions-en">
+                <a href="Files/CV/CV_Diego_Pilares_Gallego_English.pdf" target="_blank" class="btn btn-primary">
+                    📄 Download English CV
+                </a>
+                <a href="Files/CV/CV_Diego_Pilares_Gallego_Español.pdf" target="_blank" class="btn btn-secondary">
+                    📄 Download Spanish CV
+                </a>
+                <button onclick="window.print()" class="btn btn-secondary">
+                    🖨️ Print CV
+                </button>
+            </div>
+            
+            <!-- Spanish Content -->
+            <div class="lang-content" id="actions-es">
+                <a href="Files/CV/CV_Diego_Pilares_Gallego_English.pdf" target="_blank" class="btn btn-primary">
+                    📄 Descargar CV en Inglés
+                </a>
+                <a href="Files/CV/CV_Diego_Pilares_Gallego_Español.pdf" target="_blank" class="btn btn-secondary">
+                    📄 Descargar CV en Español
+                </a>
+                <button onclick="window.print()" class="btn btn-secondary">
+                    🖨️ Imprimir CV
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Content -->
+    <section class="cv-content">
+        <div class="container">
+            <!-- CV Header -->
+            <div class="cv-header">
+                <h1 class="cv-name">Diego Pilares Gallego</h1>
+                <!-- English Content -->
+                <div class="lang-content active" id="header-en">
+                    <div class="cv-title">MSc Motorsport Engineering Student</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            📧 <a href="mailto:dpilares01@gmail.com">dpilares01@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            📱 +44 07721 693100
+                        </div>
+                        <div class="contact-item">
+                            🌐 <a href="https://www.linkedin.com/in/diegopilares/" target="_blank">LinkedIn Profile</a>
+                        </div>
+                        <div class="contact-item">
+                            📍 Oxford, Oxfordshire, UK
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Spanish Content -->
+                <div class="lang-content" id="header-es">
+                    <div class="cv-title">Estudiante de MSc Ingeniería del Motorsport</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            📧 <a href="mailto:dpilares01@gmail.com">dpilares01@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            📱 +34 689 52 55 79 (WhatsApp) / +44 7722 693100 (Llamadas)
+                        </div>
+                        <div class="contact-item">
+                            🌐 <a href="https://www.linkedin.com/in/diegopilares/" target="_blank">Perfil LinkedIn</a>
+                        </div>
+                        <div class="contact-item">
+                            🇪🇸 Nacionalidad: Española | Edad: 24 años
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Me Section -->
+            <div class="cv-section">
+                <div class="section-header">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="about-header-en">
+                        👤 About Me
+                    </div>
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="about-header-es">
+                        👤 Sobre Mí
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="about-content-en">
+                        <p class="about-text">
+                            MSc Motorsport Engineering student at Oxford Brookes with a background in automotive engineering, 
+                            focused on vehicle dynamics, data analysis, and CAD. Driven by curiosity and a hands-on mindset, I enjoy 
+                            solving engineering challenges and creating innovative, high-quality solutions. Passionate about motorsport, 
+                            I am proactive, collaborative, and always seeking to deepen my understanding of performance and vehicle 
+                            behaviour.
+                        </p>
+                    </div>
+                    
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="about-content-es">
+                        <p class="about-text">
+                            Ingeniero Industrial con mención en Automoción, actualmente estudiante del Máster en Ingeniería de 
+                            Motorsport en Oxford Brookes, centrado en dinámica vehicular, análisis de datos y CAD. Impulsado por 
+                            mi curiosidad y una mentalidad práctica, disfruto resolviendo retos de ingeniería y creando soluciones 
+                            innovadoras y de alta calidad. Apasionado del automovilismo, soy proactivo, colaborador y siempre busco 
+                            profundizar en mi comprensión del rendimiento y el comportamiento de los vehículos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="cv-section">
+                <div class="section-header">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="edu-header-en">
+                        🎓 Education
+                    </div>
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="edu-header-es">
+                        🎓 Educación
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="edu-content-en">
+                        <div class="education-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">MSc Motorsport Engineering</div>
+                                    <div class="university">Oxford Brookes University</div>
+                                    <div class="location">Oxford, UK</div>
+                                </div>
+                                <div class="duration">Sept. 2024 – Sept. 2025</div>
+                            </div>
+                            <div class="grade">Expected mark: Distinction (pending dissertation)</div>
+                            <div class="item-description">
+                                <strong>Key modules:</strong> Advanced Vehicle Dynamics - Advanced Vehicle Aerodynamics - 
+                                Laptime Simulation and Race Engineering - Composite Design and Impact Modelling.
+                            </div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">BEng Automotive Engineering</div>
+                                    <div class="university">Universidad Francisco de Vitoria – Motor & Sport Institute</div>
+                                    <div class="location">Madrid, Spain</div>
+                                </div>
+                                <div class="duration">Sept. 2019 – Jan. 2025</div>
+                            </div>
+                            <div class="grade">Final Mark: 6.91/10 (2:1 UK equivalent)</div>
+                            <div class="item-description">
+                                <strong>Key modules:</strong> Vehicle Dynamics - Design, Prototyping and Testing - Transmission and Gearbox - 
+                                Suspension - Steering and Braking Systems – Powertrain – Aerodynamic - Fluid Dynamics – 
+                                Thermodynamics - Machines and Mechanisms Theory - Advanced Materials.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="edu-content-es">
+                        <div class="education-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">Máster en Motorsport Engineering</div>
+                                    <div class="university">Oxford Brookes University</div>
+                                    <div class="location">Oxford, Reino Unido</div>
+                                </div>
+                                <div class="duration">Sept. 2024 – Sept. 2025</div>
+                            </div>
+                            <div class="grade">Nota Final Esperada: Distinction (a falta de TFM, equivalente a 9-10/10)</div>
+                            <div class="item-description">
+                                <strong>Módulos Clave:</strong> Dinámica Vehicular Avanzada - Aerodinámica avanzada de vehículos - 
+                                Simulación de tiempos de vuelta e ingeniería de carreras - Diseño de materiales compuestos y 
+                                modelización de impactos.
+                            </div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">Ingeniería en Sist. Industriales, mención de Automoción</div>
+                                    <div class="university">Universidad Francisco de Vitoria – Motor & Sport Institute</div>
+                                    <div class="location">Madrid, España</div>
+                                </div>
+                                <div class="duration">Sept. 2019 – Ene. 2025</div>
+                            </div>
+                            <div class="grade">Nota Final: 6.91/10</div>
+                            <div class="item-description">
+                                <strong>Módulos Clave:</strong> Dinámica de vehículos - Diseño, prototipos y ensayos - Transmisión y caja de cambios - 
+                                Suspensión - Sistemas de dirección y frenado - Tren de potencia - Aerodinámica - Dinámica de fluidos - 
+                                Termodinámica - Teoría de máquinas y mecanismos - Materiales avanzados.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Experience Section -->
+            <div class="cv-section">
+                <div class="section-header">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="exp-header-en">
+                        💼 Professional Experience
+                    </div>
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="exp-header-es">
+                        💼 Experiencia Profesional
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="exp-content-en">
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">Formula Student Team Member</div>
+                                    <div class="company">Oxford Brookes Racing</div>
+                                    <div class="location">Oxford, UK</div>
+                                </div>
+                                <div class="duration">Sept. 2024 – May 2025</div>
+                            </div>
+                            <div class="item-description">
+                                <ul>
+                                    <li>Collaborating with the Suspension & Structures departments to design and test new brake rotors and hub components.</li>
+                                    <li>Using SolidWorks for CAD and HyperMesh for FEA, to enable structural and thermal analysis, as well as topology optimization.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">Industrial Engineer Placement</div>
+                                    <div class="company">NTT DATA</div>
+                                    <div class="location">Madrid, Spain</div>
+                                </div>
+                                <div class="duration">Feb. 2024 – Sept. 2024</div>
+                            </div>
+                            <div class="item-description">
+                                <ul>
+                                    <li>Placement on Automotive department.</li>
+                                    <li>Involved in the development of corrective measures and new functionalities.</li>
+                                    <li>Produced technical documentation, training presentations, analysed and resolved issues for the portals of BMW Spain, Portugal, Italy, Mexico, Brazil and India.</li>
+                                    <li>Created layouts for Hyundai Spain.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">Formula Student Team Member</div>
+                                    <div class="company">UFV Racing</div>
+                                    <div class="location">Madrid, Spain</div>
+                                </div>
+                                <div class="duration">Sept. 2019 – July 2021</div>
+                            </div>
+                            <div class="item-description">
+                                <ul>
+                                    <li>Collaborated with the Electronics department, creating wiring diagrams and PCB layouts via LTSpice and EasyEDA, developed Aim PDM integration and engine mapping.</li>
+                                    <li>Collaborated with the Systems and Testing department to install powertrain, steering, suspension and brake components onto the vehicles, CAD of components in SolidWorks, 3D printing of test components via Ultimaker Cura and TIG welding.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="exp-content-es">
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">Miembro del Equipo Formula Student</div>
+                                    <div class="company">Oxford Brookes Racing</div>
+                                    <div class="location">Oxford, Reino Unido</div>
+                                </div>
+                                <div class="duration">Sept. 2024 – Mayo 2025</div>
+                            </div>
+                            <div class="item-description">
+                                <ul>
+                                    <li>Colaboración con los departamentos de Suspensión y Estructuras para diseñar y verificar nuevos componentes del sistema de frenos y reducción de peso de componentes del buje.</li>
+                                    <li>Uso de SolidWorks para CAD e HyperMesh para FEA, para permitir el análisis estructural y térmico, así como la optimización de la topología.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">Prácticas de Ingeniería Industrial</div>
+                                    <div class="company">NTT DATA</div>
+                                    <div class="location">Madrid, España</div>
+                                </div>
+                                <div class="duration">Feb. 2024 – Sept. 2024</div>
+                            </div>
+                            <div class="item-description">
+                                <ul>
+                                    <li>Prácticas en el departamento de Automoción como parte del equipo de gestión de proyectos.</li>
+                                    <li>Implicado en el desarrollo de medidas correctoras y nuevas funcionalidades.</li>
+                                    <li>Realización de documentación técnica, presentaciones de formación, análisis y resolución de incidencias para los portales de BMW España, Portugal, Italia, México, Brasil e India.</li>
+                                    <li>Creación de layouts para Hyundai España.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <div class="item-title">Miembro del Equipo Formula Student</div>
+                                    <div class="company">UFV Racing</div>
+                                    <div class="location">Madrid, España</div>
+                                </div>
+                                <div class="duration">Sept. 2019 – Julio 2021</div>
+                            </div>
+                            <div class="item-description">
+                                <ul>
+                                    <li>Colaboración con el departamento de electrónica, creación de diagramas de cableado y diseños de PCB mediante LTSpice y EasyEDA, desarrollo de la integración de la PDM Aim y mapeado de motores.</li>
+                                    <li>Colaboración con el departamento de Sistemas y Pruebas para instalar componentes de tren de potencia, dirección, suspensión y frenos en el monoplaza, CAD de componentes en SolidWorks, impresión 3D de componentes de prueba mediante Ultimaker Cura y soldadura TIG.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="cv-section">
+                <div class="section-header">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="skills-header-en">
+                        ⚙️ Skills
+                    </div>
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="skills-header-es">
+                        ⚙️ Habilidades
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="skills-content-en">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Vehicle and Systems Simulation</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">AVL VSM</span>
+                                    <span class="skill-tag">GT-Suite</span>
+                                    <span class="skill-tag">MSC Adams</span>
+                                    <span class="skill-tag">MATLAB</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>CAD, FEA and CFD</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">SolidWorks</span>
+                                    <span class="skill-tag">Star CCM+</span>
+                                    <span class="skill-tag">XFLR5</span>
+                                    <span class="skill-tag">Femap</span>
+                                    <span class="skill-tag">Hypermesh</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Data Acquisition and Analysis</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">AVL Drive Race</span>
+                                    <span class="skill-tag">MoTeC i2</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Productivity</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Microsoft Office</span>
+                                    <span class="skill-tag">Google Workspace</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="skills-content-es">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Simulación de Vehículos y Sistemas</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">AVL VSM</span>
+                                    <span class="skill-tag">GT-Suite</span>
+                                    <span class="skill-tag">MSC Adams</span>
+                                    <span class="skill-tag">MATLAB</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>CAD, FEA y CFD</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">SolidWorks</span>
+                                    <span class="skill-tag">Star CCM+</span>
+                                    <span class="skill-tag">XFLR5</span>
+                                    <span class="skill-tag">Femap</span>
+                                    <span class="skill-tag">Hypermesh</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Adquisición y Análisis de Datos</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">AVL Drive Race</span>
+                                    <span class="skill-tag">MoTeC i2</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Productividad</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Microsoft Office</span>
+                                    <span class="skill-tag">Google Workspace</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Herramientas Adicionales</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">LTSpice</span>
+                                    <span class="skill-tag">Granta</span>
+                                    <span class="skill-tag">Multisim</span>
+                                    <span class="skill-tag">Ultimaker Cura</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Projects Section -->
+            <div class="cv-section">
+                <div class="section-header">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="projects-header-en">
+                        🚀 Key Projects
+                    </div>
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="projects-header-es">
+                        🚀 Proyectos Principales
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="projects-content-en">
+                        <div class="projects-preview">
+                            <div class="project-preview">
+                                <h4>MSc Dissertation: Hydrogen-fuelled LTC/CAI-IC engine control strategy optimization</h4>
+                                <div class="project-duration">Jan. 2025 – Present</div>
+                                <p class="project-description">
+                                    Simulation of a 1D Low-Temperature Combustion engine using GT-Suite. Control strategy development utilising DOE and optimisation using GT-Suite's ML algorithms. Focused on hydrogen to maximise efficiency and reduce NOx emissions.
+                                </p>
+                            </div>
+                            
+                            <div class="project-preview">
+                                <h4>Next-gen F1 compliance and setup study</h4>
+                                <div class="project-duration">Apr. 2025 – May. 2025</div>
+                                <p class="project-description">
+                                    Modified a 2024-spec F1 vehicle geometry to meet 2026 FIA technical regulations using AVL VSM. Simulated skid-pad and on-track performance and optimised suspension, tyres and brake balance.
+                                </p>
+                            </div>
+                            
+                            <div class="project-preview">
+                                <h4>LMGT3 DrivAer front aero devices design and CFD validation</h4>
+                                <div class="project-duration">Oct. 2024 – Dec. 2024</div>
+                                <p class="project-description">
+                                    Designed front aero devices for a DrivAer model in SolidWorks, following LMGT3 regulations. Performance CFD validation on Star CCM+, assessing aerodynamic performance.
+                                </p>
+                            </div>
+                            
+                            <div class="project-preview">
+                                <h4>BEng Dissertation: Carbon fibre centre-lock rim for Formula Student</h4>
+                                <div class="project-duration">Aug. 2024 – Jan. 2025</div>
+                                <p class="project-description">
+                                    Designed a lightweight carbon fibre rim with integrated centre-lock nut CAD model in SolidWorks. Performed FEA structural analysis and determined materials using Granta.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="projects-content-es">
+                        <div class="projects-preview">
+                            <div class="project-preview">
+                                <h4>Tesis de Máster: Optimización de la estrategia de control de un motor LTC/CAI de hidrógeno</h4>
+                                <div class="project-duration">Ene. 2025 – Presente</div>
+                                <p class="project-description">
+                                    Simulación de un motor LTC/CAI 1D con GT-Suite. Desarrollo de estrategias de control mediante DOE y optimización con algoritmos ML de GT-Suite. Uso de hidrógeno para maximizar la eficiencia y reducir las emisiones de NOx.
+                                </p>
+                            </div>
+                            
+                            <div class="project-preview">
+                                <h4>Estudio de adaptación y set-up para la próxima generación de F1</h4>
+                                <div class="project-duration">Abril 2025 – Mayo 2025</div>
+                                <p class="project-description">
+                                    Modificación de la geometría de un F1 con especificaciones de 2024 para cumplir la normativa técnica de la FIA de 2026 mediante AVL VSM. Simulación del rendimiento en pista y optimización de la suspensión, neumáticos y el equilibrio de los frenos.
+                                </p>
+                            </div>
+                            
+                            <div class="project-preview">
+                                <h4>Diseño de elementos aerodinámicos para LMGT3 y validación CFD</h4>
+                                <div class="project-duration">Oct. 2024 – Dic. 2024</div>
+                                <p class="project-description">
+                                    Diseño de elementos aerodinámicos delanteros para un modelo DrivAer en SolidWorks, siguiendo la normativa LMGT3. Validación CFD de rendimiento en Star CCM+, evaluando el rendimiento aerodinámico.
+                                </p>
+                            </div>
+                            
+                            <div class="project-preview">
+                                <h4>Tesis de grado: Llanta mono-tuerca de fibra de carbono para Formula Student</h4>
+                                <div class="project-duration">Ago. 2024 – Ene. 2025</div>
+                                <p class="project-description">
+                                    CAD en SolidWorks de una llanta ligera de fibra de carbono con mono-tuerca. Análisis estructural por FEA en SolidWorks y determinación de los materiales con Granta.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages Section -->
+            <div class="cv-section">
+                <div class="section-header">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="lang-header-en">
+                        🌐 Languages
+                    </div>
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="lang-header-es">
+                        🌐 Idiomas
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="lang-content-en">
+                        <div class="languages-grid">
+                            <div class="language-item">
+                                <div class="language-name">Spanish</div>
+                                <div class="language-level">Native</div>
+                                <div class="language-certs">Mother tongue</div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-name">English</div>
+                                <div class="language-level">Fluent</div>
+                                <div class="language-certs">
+                                    Pearson PTE Academic Overall Score 80 (2024)<br>
+                                    Cambridge English Certificate level B2 (2019)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="lang-content-es">
+                        <div class="languages-grid">
+                            <div class="language-item">
+                                <div class="language-name">Español</div>
+                                <div class="language-level">Nativo</div>
+                                <div class="language-certs">Lengua materna</div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-name">Inglés</div>
+                                <div class="language-level">Fluido</div>
+                                <div class="language-certs">
+                                    Master de Ingeniería cursado en inglés (2025)<br>
+                                    Pearson PTE Academic Overall Score 80 (2024)<br>
+                                    Cambridge English Certificate level B2 (2019)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests Section -->
+            <div class="cv-section">
+                <div class="section-header">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="interests-header-en">
+                        🎯 Interests
+                    </div>
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="interests-header-es">
+                        🎯 Intereses
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="interests-content-en">
+                        <div class="interests-list">
+                            <div class="interest-item">
+                                <h4>Motorsport Engineering</h4>
+                                <p>Deep interest in vehicle design, performance optimisation and race technology evolution.</p>
+                            </div>
+                            <div class="interest-item">
+                                <h4>Sim Racing & Go-Karting</h4>
+                                <p>Exploring setup theory, tyre behaviour and handling dynamics.</p>
+                            </div>
+                            <div class="interest-item">
+                                <h4>Retro Electronics Restoration</h4>
+                                <p>Repair and modification of video game consoles and other electronics through reverse engineering and creative problem solving.</p>
+                            </div>
+                            <div class="interest-item">
+                                <h4>Gym Training</h4>
+                                <p>Committed to training routines to support focus, resilience and discipline.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="interests-content-es">
+                        <div class="interests-list">
+                            <div class="interest-item">
+                                <h4>Ingeniería de automovilismo</h4>
+                                <p>Profundo interés por el diseño de vehículos, la optimización del rendimiento y la evolución de la tecnología en ámbitos de competición.</p>
+                            </div>
+                            <div class="interest-item">
+                                <h4>Sim Racing y Karting</h4>
+                                <p>Exploración de la teoría de reglajes, el comportamiento de los neumáticos y la dinámica de manejo.</p>
+                            </div>
+                            <div class="interest-item">
+                                <h4>Gimnasio</h4>
+                                <p>Compromiso con las rutinas de entrenamiento para favorecer la concentración, la resistencia y la disciplina.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- References Section -->
+            <div class="cv-section">
+                <div class="section-header">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="refs-header-en">
+                        📋 References & Employment Status
+                    </div>
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="refs-header-es">
+                        📋 Referencias
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- English Content -->
+                    <div class="lang-content active" id="refs-content-en">
+                        <p style="margin-bottom: 1rem;"><strong>References available upon request</strong></p>
+                        <p><strong>Employment Status:</strong> Currently on a UK Student Visa until January 2026.</p>
+                    </div>
+                    
+                    <!-- Spanish Content -->
+                    <div class="lang-content" id="refs-content-es">
+                        <div class="interest-item" style="border: none; background: none; padding: 0;">
+                            <h4>Israel Maeso Estrella, Manager Automoción</h4>
+                            <p>
+                                <strong>NTT Data</strong><br>
+                                Teléfono: +34 669 72 60 94<br>
+                                Email: imaesoes@emeal.nttdata.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="mailto:dpilares01@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/diegopilares/" target="_blank">LinkedIn</a>
+            </div>
+            <!-- English Content -->
+            <div class="lang-content active" id="footer-en">
+                <p>&copy; 2025 Diego Pilares Gallego | Engineering Portfolio</p>
+            </div>
+            <!-- Spanish Content -->
+            <div class="lang-content" id="footer-es">
+                <p>&copy; 2025 Diego Pilares Gallego | Portafolio de Ingeniería</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function switchLanguage(lang) {
+            // Hide all language content
+            const langContents = document.querySelectorAll('.lang-content');
+            langContents.forEach(content => content.classList.remove('active'));
+            
+            // Show selected language content
+            const contentIds = [
+                `hero-${lang}`, `actions-${lang}`, `header-${lang}`, `about-header-${lang}`, `about-content-${lang}`,
+                `edu-header-${lang}`, `edu-content-${lang}`, `exp-header-${lang}`, `exp-content-${lang}`,
+                `skills-header-${lang}`, `skills-content-${lang}`, `projects-header-${lang}`, `projects-content-${lang}`,
+                `lang-header-${lang}`, `lang-content-${lang}`, `interests-header-${lang}`, `interests-content-${lang}`,
+                `refs-header-${lang}`, `refs-content-${lang}`, `footer-${lang}`
+            ];
+            
+            contentIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.classList.add('active');
+                }
+            });
+            
+            // Update navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                const text = link.getAttribute(`data-${lang}`);
+                if (text) {
+                    link.textContent = text;
+                }
+            });
+            
+            // Update language buttons
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Find and activate the correct button
+            const activeBtn = Array.from(langButtons).find(btn => 
+                btn.textContent.toLowerCase() === lang.toLowerCase()
+            );
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+            
+            // Update document language
+            document.documentElement.lang = lang;
+            
+            // Store language preference (with error handling)
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch (e) {
+                console.log('Cannot save language preference');
+            }
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks) {
+                navLinks.classList.toggle('active');
+            }
+        }
+
+        // Load preferred language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const preferredLang = localStorage.getItem('preferredLanguage') || 'en';
+                if (preferredLang === 'es') {
+                    // Simulate clicking the Spanish button
+                    const esBtn = document.querySelector('.lang-btn:last-child');
+                    if (esBtn) {
+                        esBtn.click();
+                    }
+                }
+            } catch (e) {
+                // Fallback if localStorage is not available
+                console.log('localStorage not available');
+            }
+        }); 
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (nav) {
+                if (window.scrollY > 100) {
+                    nav.style.background = 'rgba(0, 0, 0, 0.98)';
+                } else {
+                    nav.style.background = 'rgba(0, 0, 0, 0.95)';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
