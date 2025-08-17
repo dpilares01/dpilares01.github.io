@@ -528,6 +528,10 @@
         .project-card:nth-child(4) { animation-delay: 0.4s; }
         .project-card:nth-child(5) { animation-delay: 0.5s; }
         .project-card:nth-child(6) { animation-delay: 0.6s; }
+        .project-card:nth-child(7) { animation-delay: 0.7s; }
+        .project-card:nth-child(8) { animation-delay: 0.8s; }
+        .project-card:nth-child(9) { animation-delay: 0.9s; }
+        .project-card:nth-child(10) { animation-delay: 1.0s; }
 
         @keyframes fadeInUp {
             from {
@@ -568,13 +572,13 @@
             <!-- English Content -->
             <div class="lang-content active" id="hero-en">
                 <h1>Engineering Projects</h1>
-                <p>Innovative solutions in motorsport engineering, vehicle dynamics, and automotive technology</p>
+                <p>Innovative projects in motorsport and automotive engineering, focused on vehicle dynamics, prototyping, testing and data analysis.</p>
             </div>
             
             <!-- Spanish Content -->
             <div class="lang-content" id="hero-es">
                 <h1>Proyectos de Ingeniería</h1>
-                <p>Soluciones innovadoras en ingeniería del motorsport, dinámica vehicular y tecnología automotriz</p>
+                <p>Proyectos innovadores en el ámbito de la ingeniería del motorsport y la ingeniería automotriz, centrados en la dinámica vehicular, la creación de prototipos, testing y análisis de datos.</p>
             </div>
         </div>
     </section>
@@ -594,12 +598,15 @@
                         <button class="filter-btn" onclick="filterProjects('simulation')">Simulation</button>
                         <button class="filter-btn" onclick="filterProjects('design')">Design</button>
                         <button class="filter-btn" onclick="filterProjects('analysis')">Analysis</button>
+                        <button class="filter-btn" onclick="filterProjects('electronics')">Electronics</button>
+                        <button class="filter-btn" onclick="filterProjects('aerodynamics')">Aerodynamics</button>
+                        <button class="filter-btn" onclick="filterProjects('testing')">Testing</button>
                     </div>
                 </div>
 
                 <div class="projects-grid" id="projectsGrid">
                     <!-- Project 1: MSc Dissertation -->
-                    <div class="project-card" data-category="dissertation simulation">
+                    <div class="project-card" data-category="dissertation simulation design analysis">
                         <div class="project-header">
                             <div class="project-category">MSc Dissertation</div>
                             <h3 class="project-title">Hydrogen-fuelled LTC/CAI-IC Engine Control Strategy Optimization</h3>
@@ -619,7 +626,6 @@
                                 <span class="tech-tag">Control Systems</span>
                             </div>
                             <div class="project-actions">
-                                <!--  <button class="btn btn-primary" onclick="openPDF('MSc Dissertation: Hydrogen Engine Optimization', './Files/Projects/msc-dissertation.pdf')"> -->
                                 <button class="btn btn-primary" onclick="">
                                     📄 Project in progress
                                 </button>
@@ -656,7 +662,7 @@
                     </div>
 
                     <!-- Project 3: LMGT3 Aerodynamics -->
-                    <div class="project-card" data-category="design analysis">
+                    <div class="project-card" data-category="design analysis aerodynamics">
                         <div class="project-header">
                             <div class="project-category">Aerodynamics</div>
                             <h3 class="project-title">LMGT3 DrivAer Front Aero Devices Design</h3>
@@ -711,7 +717,35 @@
                         </div>
                     </div>
 
-                    <!-- Project 5: BEng Dissertation -->
+                    <!-- Project 5: Regenerative Braking System -->
+                    <div class="project-card" data-category="electronics design analysis">
+                        <div class="project-header">
+                            <div class="project-category">Power Electronics</div>
+                            <h3 class="project-title">Regenerative Braking System Design and Analysis</h3>
+                            <div class="project-duration">Nov. 2024 – Dec. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Complete design and simulation of regenerative braking systems for electric vehicles. Includes 
+                                DC-AC inverter analysis, ultracapacitor integration, and power management optimization with 
+                                DC-DC converters for improved energy recovery and system efficiency.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Circuit Design</span>
+                                <span class="tech-tag">Power Electronics</span>
+                                <span class="tech-tag">Ultracapacitors</span>
+                                <span class="tech-tag">DC-DC Converters</span>
+                                <span class="tech-tag">Energy Management</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Regenerative Braking System', 'Files/Projects/MSc/EV/ENGR7025_CW1.pdf')">
+                                    📄 View Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: BEng Dissertation -->
                     <div class="project-card" data-category="dissertation design">
                         <div class="project-header">
                             <div class="project-category">BEng Dissertation</div>
@@ -733,13 +767,13 @@
                             </div>
                             <div class="project-actions">
                                 <button class="btn btn-primary" onclick="openPDF('Carbon Fiber Rim Design', 'Files/Projects/BEng/Dissertation/TFG_Diseño_llanta_monotuerca_para_FS.pdf')">
-                                    📄 View Project (Spanish)
+                                    📄 View Project (Document in Spanish)
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 6: Brake Cooling -->
+                    <!-- Project 7: Brake Cooling -->
                     <div class="project-card" data-category="design analysis">
                         <div class="project-header">
                             <div class="project-category">Thermal Management</div>
@@ -761,7 +795,91 @@
                             </div>
                             <div class="project-actions">
                                 <button class="btn btn-primary" onclick="openPDF('Brake Cooling System Design', 'Files/Projects/BEng/Design/Proyecto_Tobera_Frenos_GR86.pdf')">
-                                    📄 View Project (Spanish)
+                                    📄 View Project (Document in Spanish)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: NACA Airfoil Analysis -->
+                    <div class="project-card" data-category="aerodynamics analysis simulation">
+                        <div class="project-header">
+                            <div class="project-category">Aerodynamics</div>
+                            <h3 class="project-title">NACA Airfoil Performance Analysis</h3>
+                            <div class="project-duration">Oct. 2023 – Dec. 2023</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Comprehensive aerodynamic analysis of NACA 4-digit airfoil families using XFLR5. Investigation 
+                                of thickness and camber effects on lift, drag, and efficiency characteristics across different 
+                                Reynolds numbers and Mach numbers for subsonic flow conditions.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">XFLR5</span>
+                                <span class="tech-tag">Airfoil Analysis</span>
+                                <span class="tech-tag">Reynolds Number</span>
+                                <span class="tech-tag">Mach Number</span>
+                                <span class="tech-tag">Subsonic Flow</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('NACA Airfoil Analysis', 'Files/Projects/BEng/Aerodynamics/Practica_XFLR5_perfiles_NACA.pdf')">
+                                    📄 View Project (Document in Spanish)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 9: Nissan Sunny Avoidance Maneuver -->
+                    <div class="project-card" data-category="testing analysis simulation">
+                        <div class="project-header">
+                            <div class="project-category">Vehicle Testing</div>
+                            <h3 class="project-title">ISO 3888-2 "Moose test" Avoidance Maneuver Analysis</h3>
+                            <div class="project-duration">Apr. 2024 – May 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Comprehensive analysis and simulation of ISO 3888-2 "Moose test" avoidance maneuver using a modified Nissan Sunny. 
+                                Real track testing with telemetry data analysis, suspension geometry optimization using 
+                                Altair MotionView, and setup improvements to maximize test completion speed.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Altair MotionView</span>
+                                <span class="tech-tag">Race Studio 3</span>
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">Telemetry Analysis</span>
+                                <span class="tech-tag">Suspension Geometry</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Avoidance Maneuver Analysis', 'Files/Projects/BEng/Vehicle_Dynamics/Informe_Esquiva_Nissan_Sunny.pdf')">
+                                    📄 View Project (Document in Spanish)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 10: Simulator Telemetry Analysis -->
+                    <div class="project-card" data-category="analysis simulation">
+                        <div class="project-header">
+                            <div class="project-category">Data Analysis</div>
+                            <h3 class="project-title">Formula Racing Simulator Telemetry Analysis</h3>
+                            <div class="project-duration">Mar. 2024 – Apr. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Detailed telemetry analysis comparing two drivers on Silverstone circuit using a racing simulator. 
+                                Comprehensive setup optimization analysis including suspension, aerodynamics, and differential 
+                                settings. Performance comparison with setup recommendations for lap time improvement.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Telemetry Analysis</span>
+                                <span class="tech-tag">Racing Simulation</span>
+                                <span class="tech-tag">Setup Optimization</span>
+                                <span class="tech-tag">Data Visualization</span>
+                                <span class="tech-tag">Performance Analysis</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Simulator Telemetry Analysis', 'Files/Projects/BEng/Vehicle_Dynamics/Analisis_Telemetria_Simulador.pdf')">
+                                    📄 View Project (Document in Spanish)
                                 </button>
                             </div>
                         </div>
@@ -781,12 +899,15 @@
                         <button class="filter-btn" onclick="filterProjects('simulation')">Simulación</button>
                         <button class="filter-btn" onclick="filterProjects('design')">Diseño</button>
                         <button class="filter-btn" onclick="filterProjects('analysis')">Análisis</button>
+                        <button class="filter-btn" onclick="filterProjects('electronics')">Electrónica</button>
+                        <button class="filter-btn" onclick="filterProjects('aerodynamics')">Aerodinámica</button>
+                        <button class="filter-btn" onclick="filterProjects('testing')">Testing</button>
                     </div>
                 </div>
 
                 <div class="projects-grid">
                     <!-- Spanish Project 1: MSc Dissertation -->
-                    <div class="project-card" data-category="dissertation simulation">
+                    <div class="project-card" data-category="dissertation simulation design analysis">
                         <div class="project-header">
                             <div class="project-category">Tesis de Maestría</div>
                             <h3 class="project-title">Optimización de Estrategia de Control de Motor LTC/CAI-IC con Hidrógeno</h3>
@@ -806,7 +927,6 @@
                                 <span class="tech-tag">Sistemas de Control</span>
                             </div>
                             <div class="project-actions">
-                    <!-- <button class="btn btn-primary" onclick="openPDF('Tesis de Maestría: Optimización Motor Hidrógeno', './Files/Projects/msc-dissertation.pdf')"> -->
                                 <button class="btn btn-primary" onclick="">            
                                     📄 Proyecto en proceso
                                 </button>
@@ -836,14 +956,14 @@
                             </div>
                             <div class="project-actions">
                                 <button class="btn btn-primary" onclick="openPDF('Estudio de Cumplimiento y Configuración F1', 'Files/Projects/MSc/Laptime_Simulation/ENGR7008_CW2.pdf')">
-                                    📄 Ver Proyecto (Inglés)
+                                    📄 Ver Proyecto (Documento en Inglés)
                                 </button>
                             </div>
                         </div>
                     </div>
 
                     <!-- Spanish Project 3: LMGT3 Aerodynamics -->
-                    <div class="project-card" data-category="design analysis">
+                    <div class="project-card" data-category="design analysis aerodynamics">
                         <div class="project-header">
                             <div class="project-category">Aerodinámica</div>
                             <h3 class="project-title">Diseño de Dispositivos Aerodinámicos Delanteros LMGT3 DrivAer</h3>
@@ -864,7 +984,7 @@
                             </div>
                             <div class="project-actions">
                                 <button class="btn btn-primary" onclick="openPDF('Diseño Aerodinámico LMGT3', 'Files/Projects/MSc/Aerodinamics/ENGR7006_CW2.pdf')">
-                                    📄 Ver Proyecto (Inglés)
+                                    📄 Ver Proyecto (Documento en Inglés)
                                 </button>
                             </div>
                         </div>
@@ -892,13 +1012,41 @@
                             </div>
                             <div class="project-actions">
                                 <button class="btn btn-primary" onclick="openPDF('Optimización Dinámica de Suspensión', 'Files/Projects/MSc/Adv_Vehicle_Dynamics/ENGR7015_CW2.pdf')">
-                                    📄 Ver Proyecto (Inglés)
+                                    📄 Ver Proyecto (Documento en Inglés)
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Spanish Project 5: BEng Dissertation -->
+                    <!-- Spanish Project 5: Regenerative Braking System -->
+                    <div class="project-card" data-category="electronics design analysis">
+                        <div class="project-header">
+                            <div class="project-category">Electrónica de Potencia</div>
+                            <h3 class="project-title">Diseño y Análisis de Sistema de Frenado Regenerativo</h3>
+                            <div class="project-duration">Nov. 2024 – Dic. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Diseño completo y simulación de sistemas de frenado regenerativo para vehículos eléctricos. 
+                                Incluye análisis de inversor DC-AC, integración de ultracondensadores y optimización de 
+                                gestión de potencia con convertidores DC-DC para mejorar la recuperación de energía y eficiencia del sistema.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Diseño de Circuitos</span>
+                                <span class="tech-tag">Electrónica de Potencia</span>
+                                <span class="tech-tag">Ultracondensadores</span>
+                                <span class="tech-tag">Convertidores DC-DC</span>
+                                <span class="tech-tag">Gestión de Energía</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Sistema de Frenado Regenerativo', 'Files/Projects/MSc/EV/ENGR7025_CW1.pdf')">
+                                    📄 Ver Proyecto (Documento en Inglés)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spanish Project 6: BEng Dissertation -->
                     <div class="project-card" data-category="dissertation design">
                         <div class="project-header">
                             <div class="project-category">Tesis de Grado</div>
@@ -926,7 +1074,7 @@
                         </div>
                     </div>
 
-                    <!-- Spanish Project 6: Brake Cooling -->
+                    <!-- Spanish Project 7: Brake Cooling -->
                     <div class="project-card" data-category="design analysis">
                         <div class="project-header">
                             <div class="project-category">Gestión Térmica</div>
@@ -948,6 +1096,90 @@
                             </div>
                             <div class="project-actions">
                                 <button class="btn btn-primary" onclick="openPDF('Diseño Sistema Refrigeración Frenos', 'Files/Projects/BEng/Design/Proyecto_Tobera_Frenos_GR86.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spanish Project 8: NACA Airfoil Analysis -->
+                    <div class="project-card" data-category="aerodynamics analysis simulation">
+                        <div class="project-header">
+                            <div class="project-category">Aerodinámica</div>
+                            <h3 class="project-title">Análisis de Rendimiento de Perfiles NACA</h3>
+                            <div class="project-duration">Oct. 2023 – Dic. 2023</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Análisis aerodinámico completo de familias de perfiles NACA de 4 dígitos usando XFLR5. 
+                                Investigación de los efectos del espesor y curvatura en las características de sustentación, 
+                                resistencia y eficiencia a través de diferentes números de Reynolds y Mach para condiciones de flujo subsónico.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">XFLR5</span>
+                                <span class="tech-tag">Análisis de Perfiles</span>
+                                <span class="tech-tag">Número de Reynolds</span>
+                                <span class="tech-tag">Número de Mach</span>
+                                <span class="tech-tag">Flujo Subsónico</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Análisis de Perfiles NACA', 'Files/Projects/BEng/Aerodynamics/Practica_XFLR5_perfiles_NACA.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spanish Project 9: Nissan Sunny Avoidance Maneuver -->
+                    <div class="project-card" data-category="testing analysis simulation">
+                        <div class="project-header">
+                            <div class="project-category">Testing Vehicular</div>
+                            <h3 class="project-title">Análisis de Maniobra de Esquiva ISO 3888-2</h3>
+                            <div class="project-duration">Abr. 2024 – May. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Análisis integral y simulación de maniobra de esquiva ISO 3888-2, conocida como la prueba del alce, usando un Nissan Sunny modificado. 
+                                Testing real en pista con análisis de datos de telemetría, optimización de geometría de 
+                                suspensión usando Altair MotionView, y mejoras de configuración para maximizar la velocidad posible durante la maniobra.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Altair MotionView</span>
+                                <span class="tech-tag">Race Studio 3</span>
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">Análisis de Telemetría</span>
+                                <span class="tech-tag">Geometría de Suspensión</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Análisis de Maniobra de Esquiva', 'Files/Projects/BEng/Vehicle_Dynamics/Informe_Esquiva_Nissan_Sunny.pdf')">
+                                    📄 Ver Proyecto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spanish Project 10: Simulator Telemetry Analysis -->
+                    <div class="project-card" data-category="analysis simulation">
+                        <div class="project-header">
+                            <div class="project-category">Análisis de Datos</div>
+                            <h3 class="project-title">Análisis de Telemetría de Simulador de Carreras</h3>
+                            <div class="project-duration">Mar. 2024 – May. 2024</div>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-description">
+                                Análisis detallado de telemetría comparando dos pilotos en el circuito de Silverstone usando 
+                                simulador de carreras. Análisis integral de optimización de configuración incluyendo suspensión, 
+                                aerodinámica y configuraciones de diferencial. Comparación de rendimiento con recomendaciones de configuración para mejora de tiempos por vuelta.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Análisis de Telemetría</span>
+                                <span class="tech-tag">Simulación de Carreras</span>
+                                <span class="tech-tag">Optimización de Setup</span>
+                                <span class="tech-tag">Visualización de Datos</span>
+                                <span class="tech-tag">Análisis de Rendimiento</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="btn btn-primary" onclick="openPDF('Análisis de Telemetría de Simulador', 'Files/Projects/BEng/Vehicle_Dynamics/Analisis_Telemetria_Simulador.pdf')">
                                     📄 Ver Proyecto
                                 </button>
                             </div>
@@ -983,11 +1215,11 @@
             </div>
             <!-- English Content -->
             <div class="lang-content active" id="footer-en">
-                <p>&copy; All rigts reserved 2025 Diego Pilares Gallego | Engineering Portfolio</p>
+                <p>&copy; All rights reserved 2025 Diego Pilares Gallego | Engineering Portfolio</p>
             </div>
             <!-- Spanish Content -->
             <div class="lang-content" id="footer-es">
-                <p>&copy; Todos los derechos reservados2025 Diego Pilares Gallego | Portafolio de Ingeniería</p>
+                <p>&copy; Todos los derechos reservados 2025 Diego Pilares Gallego | Portafolio de Ingeniería</p>
             </div>
         </div>
     </footer>
@@ -1141,7 +1373,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
