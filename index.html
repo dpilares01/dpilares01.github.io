@@ -4,223 +4,404 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Diego Pilares Gallego - Motorsport Engineer</title>
-    <meta name="description" content="Diego Pilares Gallego - MSc Motorsport Engineering Student at Oxford Brookes University. Vehicle dynamics, data analysis, and motorsport innovation.">
+    <title>Diego Pilares Gallego — Motorsport Engineer</title>
+    <meta name="description" content="Diego Pilares Gallego — MSc Motorsport Engineering, Oxford Brookes University. Vehicle dynamics, simulation, and high-performance automotive engineering.">
     <meta name="keywords" content="motorsport engineering, vehicle dynamics, automotive, Formula Student, Oxford Brookes">
     <meta name="author" content="Diego Pilares Gallego">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* ── TOKENS ───────────────────────────────────────────── */
+        :root {
+            --void:          #080810;
+            --surface:       #0d0d1a;
+            --surface-2:     #12121f;
+            --glass:         rgba(255,255,255,0.035);
+            --glass-hover:   rgba(255,255,255,0.065);
+            --glass-border:  rgba(255,255,255,0.09);
+            --glass-border-h:rgba(255,255,255,0.18);
+            --accent:        #4DFFEA;
+            --accent-warm:   #FF6B35;
+            --accent-dim:    rgba(77,255,234,0.12);
+            --text-primary:  #F0F0F5;
+            --text-secondary:rgba(240,240,245,0.65);
+            --text-muted:    rgba(240,240,245,0.38);
+            --mono:          'JetBrains Mono', monospace;
+            --sans:          'Inter', sans-serif;
+            --display:       'Syne', sans-serif;
         }
 
+        /* ── RESET ────────────────────────────────────────────── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: var(--sans);
+            background: var(--void);
+            color: var(--text-primary);
             overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
+        /* ── NOISE OVERLAY ────────────────────────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
+        }
+
+        /* ── NAV ──────────────────────────────────────────────── */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
+            padding: 1.25rem 0;
+            transition: background 0.4s ease, backdrop-filter 0.4s ease;
         }
-
+        nav.scrolled {
+            background: rgba(8,8,16,0.75);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            border-bottom: 1px solid var(--glass-border);
+        }
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
         }
-
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #00d4ff;
+            font-family: var(--display);
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--text-primary);
+            text-decoration: none;
         }
-
+        .logo span { color: var(--accent); }
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: center;
         }
-
         .nav-links a {
-            color: white;
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.25s ease;
         }
-
-        .nav-links a:hover {
-            color: #00d4ff;
-        }
-
-        .nav-links a::after {
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--text-primary); }
+        .nav-links a.active::after {
             content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00d4ff;
-            transition: width 0.3s ease;
+            display: block;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin: 3px auto 0;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .language-switcher {
+        /* Language switcher */
+        .lang-switcher {
             display: flex;
-            gap: 0.5rem;
-            align-items: center;
+            gap: 2px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3px;
         }
-
         .lang-btn {
             background: none;
-            border: 1px solid #00d4ff;
-            color: #00d4ff;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.2rem 0.7rem;
+            border-radius: 16px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-family: var(--mono);
+            letter-spacing: 0.05em;
+            transition: all 0.25s ease;
         }
-
-        .lang-btn:hover,
+        .lang-btn:hover { color: var(--text-secondary); }
         .lang-btn.active {
-            background: #00d4ff;
-            color: black;
+            background: var(--accent);
+            color: var(--void);
         }
 
-        /* Hero Section */
+        /* Mobile menu button */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .mobile-menu span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: currentColor;
+            transition: all 0.3s ease;
+        }
+
+        /* ── HERO ─────────────────────────────────────────────── */
         .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            position: relative;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        /* Animated mesh gradient background */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--void);
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(77,255,234,0.07) 0%, transparent 65%);
+            top: -200px;
+            right: -200px;
+            animation: drift-a 18s ease-in-out infinite;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,107,53,0.06) 0%, transparent 60%);
+            bottom: -150px;
+            left: -100px;
+            animation: drift-b 22s ease-in-out infinite;
+        }
+        .hero-orb {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(77,255,234,0.05) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: drift-c 14s ease-in-out infinite;
+        }
+        @keyframes drift-a {
+            0%,100% { transform: translate(0,0) scale(1); }
+            33%      { transform: translate(-60px, 40px) scale(1.05); }
+            66%      { transform: translate(40px, -30px) scale(0.97); }
+        }
+        @keyframes drift-b {
+            0%,100% { transform: translate(0,0) scale(1); }
+            50%      { transform: translate(80px, -60px) scale(1.08); }
+        }
+        @keyframes drift-c {
+            0%,100% { transform: translate(-50%,-50%) scale(1); }
+            50%      { transform: translate(-50%,-50%) scale(1.15); }
+        }
+
+        /* Grid overlay */
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            padding-top: 80px;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.3s forwards;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 1px;
+            background: var(--accent);
+            opacity: 0.7;
+        }
+
+        .hero-name {
+            font-family: var(--display);
+            font-weight: 800;
+            font-size: clamp(3.2rem, 8vw, 7.5rem);
+            line-height: 0.92;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease 0.45s forwards;
+        }
+        .hero-name .accent-word {
+            color: var(--accent);
+            display: block;
+        }
+
+        .hero-title {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: clamp(1rem, 2.5vw, 1.6rem);
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+            margin-top: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease 0.6s forwards;
+        }
+
+        .hero-bio {
+            max-width: 560px;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease 0.75s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.9s ease 0.9s forwards;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.8rem;
+            background: var(--accent);
+            color: var(--void);
+            border: none;
+            border-radius: 40px;
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #7efff4;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(77,255,234,0.25);
+        }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.8rem;
+            background: var(--glass);
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
+            font-family: var(--sans);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+        .btn-ghost:hover {
+            background: var(--glass-hover);
+            border-color: var(--glass-border-h);
+            transform: translateY(-2px);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+        }
+        .scroll-indicator span {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+            animation: scroll-pulse 2s ease-in-out infinite;
+        }
+        @keyframes scroll-pulse {
+            0%,100% { opacity: 0.3; transform: scaleY(1); }
+            50%      { opacity: 1;   transform: scaleY(0.6); }
+        }
+
+        /* ── ABOUT ────────────────────────────────────────────── */
+        .about {
+            padding: 130px 0 120px;
+            background: var(--void);
+            position: relative;
+        }
+        .about::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff" fill-opacity="0.05" points="0,1000 1000,0 1000,1000"/></svg>');
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-content {
-            color: white;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: slideUp 1s ease 0.5s forwards;
-        }
-
-        .hero h2 {
-            font-size: 1.8rem;
-            color: #00d4ff;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: slideUp 1s ease 0.7s forwards;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: slideUp 1s ease 0.9s forwards;
-            text-align: justify;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: slideUp 1s ease 1.1s forwards;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: #00d4ff;
-            color: #1e3c72;
-        }
-
-        .btn-primary:hover {
-            background: white;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: #1e3c72;
-            transform: translateY(-2px);
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background: #f8f9fa;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
         }
 
         .container {
@@ -229,113 +410,351 @@
             padding: 0 2rem;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1e3c72;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
+        .section-label {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.22em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: flex;
             align-items: center;
+            gap: 0.75rem;
+        }
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--glass-border), transparent);
+            max-width: 80px;
         }
 
-        .about-image {
+        .section-title {
+            font-family: var(--display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 3rem;
+            line-height: 1.1;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        /* Profile glass card */
+        .profile-card {
+            position: relative;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
             text-align: center;
         }
-
-        .profile-img {
-            width: 250px;
-            height: 250px;
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(77,255,234,0.15), transparent 50%, rgba(255,107,53,0.08));
+            pointer-events: none;
+        }
+        .profile-img-wrap {
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #00d4ff, #1e3c72);
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--accent), rgba(77,255,234,0.3));
+            padding: 2px;
+        }
+        .profile-img-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--surface);
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
         }
-
-        .profile-img img {
+        .profile-img-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 50%;
         }
-
         .profile-img-fallback {
-            font-size: 4rem;
-            color: white;
+            font-size: 3.5rem;
         }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #1e3c72;
+        .profile-name {
+            font-family: var(--display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
         }
-
-        .about-text p {
-            font-size: 1.1rem;
+        .profile-role {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
             margin-bottom: 1.5rem;
-            color: #666;
-            text-align: justify;
         }
-
-        .skills-preview {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+        .profile-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1.5rem;
         }
-
-        .skill-tag {
-            background: #00d4ff;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: #1e3c72;
-            color: white;
+        .stat-item {
+            background: var(--surface);
+            padding: 1rem 0.75rem;
             text-align: center;
-            padding: 2rem 0;
+        }
+        .stat-value {
+            font-family: var(--display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
+            font-family: var(--mono);
         }
 
+        .about-text-block {
+            min-width: 0;          /* prevent grid column from overflowing */
+            overflow: hidden;
+        }
+        .about-text-block h3 {
+            font-family: var(--display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+        .about-text-block h3 em {
+            font-style: normal;
+            color: var(--accent);
+        }
+        .about-text-block p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ── SKILLS ──────────────────────────────────────────── */
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.75rem;
+        }
+        .skill-chip {
+            font-family: var(--mono);
+            font-size: 0.73rem;
+            padding: 0.38rem 0.9rem;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            cursor: default;
+        }
+        .skill-chip:hover {
+            background: var(--accent-dim);
+            border-color: rgba(77,255,234,0.3);
+            color: var(--accent);
+        }
+
+
+        /* ── QUICK LINKS ──────────────────────────────────────── */
+        .quick-links {
+            padding: 80px 0 100px;
+            background: var(--surface);
+            position: relative;
+        }
+        .quick-links::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .link-card {
+            position: relative;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            overflow: hidden;
+            transition: all 0.35s ease;
+            backdrop-filter: blur(16px);
+            group: true;
+        }
+        .link-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            background: var(--accent-dim);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .link-card:hover {
+            border-color: rgba(77,255,234,0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(77,255,234,0.1);
+        }
+        .link-card:hover::before { opacity: 1; }
+
+        .link-card-eyebrow {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .link-card-title {
+            font-family: var(--display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+        .link-card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        .link-card-arrow {
+            position: absolute;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        .link-card:hover .link-card-arrow {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--void);
+            transform: translate(2px, -2px);
+        }
+
+        /* ── FOOTER ───────────────────────────────────────────── */
+        footer {
+            background: var(--void);
+            padding: 3rem 0;
+            border-top: 1px solid var(--glass-border);
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .footer-logo {
+            font-family: var(--display);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+        .footer-logo span { color: var(--accent); }
         .footer-links {
             display: flex;
-            justify-content: center;
             gap: 2rem;
-            margin-bottom: 1rem;
+            list-style: none;
         }
-
         .footer-links a {
-            color: #00d4ff;
+            color: var(--text-muted);
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.25s ease;
+        }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-copy {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
         }
 
-        .footer-links a:hover {
-            color: white;
+        /* ── ANIMATIONS ───────────────────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
 
-        /* Mobile Responsive */
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+        /* ── LANGUAGE CONTENT ─────────────────────────────────── */
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        /* ── RESPONSIVE ───────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .profile-card { max-width: 360px; }
+            .links-grid { grid-template-columns: 1fr; }
+            .hero-name { font-size: clamp(2.8rem, 12vw, 5rem); }
         }
 
         @media (max-width: 768px) {
@@ -344,257 +763,378 @@
                 position: absolute;
                 top: 100%;
                 left: 0;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.95);
+                right: 0;
+                background: rgba(8,8,16,0.97);
+                backdrop-filter: blur(24px);
+                border-bottom: 1px solid var(--glass-border);
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
+                padding: 1.5rem 2rem;
+                gap: 1.25rem;
             }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.4rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
+            .nav-links.open { display: flex; }
+            .mobile-menu { display: flex; }
+            .footer-inner { flex-direction: column; align-items: flex-start; }
         }
 
-        /* Language content hiding */
-        .lang-content {
-            display: none;
-        }
-
-        .lang-content.active {
-            display: block;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+
+    <!-- ─── NAV ─────────────────────────────────────────────── -->
+    <nav id="mainNav">
         <div class="nav-container">
-            <div class="logo">Diego Pilares Gallego</div>
+            <a href="index.html" class="logo">DPG<span>.</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="index.html" class="active nav-link" data-en="Home" data-es="Inicio">Home</a></li>
                 <li><a href="education.html" class="nav-link" data-en="Education" data-es="Educación">Education</a></li>
                 <li><a href="projects.html" class="nav-link" data-en="Projects" data-es="Proyectos">Projects</a></li>
                 <li><a href="cv.html" class="nav-link" data-en="CV" data-es="CV">CV</a></li>
                 <li>
-                    <div class="language-switcher">
+                    <div class="lang-switcher">
                         <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
                         <button class="lang-btn" onclick="switchLanguage('es')">ES</button>
                     </div>
                 </li>
             </ul>
-            <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ─── HERO ─────────────────────────────────────────────── -->
     <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-orb"></div>
+        </div>
+        <div class="hero-grid"></div>
+
         <div class="hero-content">
-            <!-- English Content -->
+            <!-- English -->
             <div class="lang-content active" id="hero-en">
-                <h1>Diego Pilares Gallego</h1>
-                <h2>Motorsport & Industrial Engineer</h2>
-                <p>I'm passionate about solving complex engineering challenges in the motorsport and automotive fields. While pursuing my Motorsports Engineering MSc at Oxford Brookes, I dove deep into vehicle dynamics, advanced simulation, data analysis and race technology that pushes the boundaries of performance. I’m now looking for opportunities to apply these skills in a professional engineering environment.</p>
-                <div class="cta-buttons">
-                    <a href="projects.html" class="btn btn-primary">Explore My Work</a>
-                    <a href="#about" class="btn btn-secondary">Get to Know Me</a>
+                <div class="hero-eyebrow">Motorsport &amp; Automotive Engineer</div>
+                <h1 class="hero-name">
+                    Diego
+                    <span class="accent-word">Pilares.</span>
+                </h1>
+                <p class="hero-title">MSc Motorsport Engineering — Oxford Brookes University</p>
+                <p class="hero-bio">
+                    Driven by precision and performance. I combine advanced simulation, vehicle dynamics, and data engineering to push the boundaries of what's possible on and off the track.
+                </p>
+                <div class="hero-cta">
+                    <a href="projects.html" class="btn-primary">
+                        View Projects <span>→</span>
+                    </a>
+                    <a href="#about" class="btn-ghost">About Me</a>
                 </div>
             </div>
-            
-            <!-- Spanish Content -->
+
+            <!-- Spanish -->
             <div class="lang-content" id="hero-es">
-                <h1>Diego Pilares Gallego</h1>
-                <h2>Ingeniero Industrial e Ingeniero del Motorsport</h2>
-                <p>Me apasiona resolver retos de ingeniería complejos en los campos del motorsport y la automoción. Mientras cursaba mi máster en Ingeniería del Motorsport en Oxford Brookes, profundicé en la dinámica vehicular, la simulación avanzada, el análisis de datos y tecnologías de competición que permiten superar los límites del rendimiento actuales. Ahora estoy buscando oportunidades para aplicar estas habilidades en un entorno profesional de ingeniería.</p>
-                <div class="cta-buttons">
-                    <a href="projects.html" class="btn btn-primary">Explora Mi Trabajo</a>
-                    <a href="#about" class="btn btn-secondary">Conóceme</a>
+                <div class="hero-eyebrow">Ingeniero de Automoción y del Motorsport</div>
+                <h1 class="hero-name">
+                    Diego
+                    <span class="accent-word">Pilares.</span>
+                </h1>
+                <p class="hero-title">Máster en Ingeniería del Motorsport — Oxford Brookes University</p>
+                <p class="hero-bio">
+                    Impulsado por la precisión y el rendimiento. Combino simulación avanzada, dinámica vehicular e ingeniería de datos para superar los límites del rendimiento dentro y fuera de la pista.
+                </p>
+                <div class="hero-cta">
+                    <a href="projects.html" class="btn-primary">
+                        Ver Proyectos <span>→</span>
+                    </a>
+                    <a href="#about" class="btn-ghost">Sobre Mí</a>
                 </div>
             </div>
         </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ─── ABOUT ─────────────────────────────────────────────── -->
     <section class="about" id="about">
         <div class="container">
-            <!-- English Content -->
+
+            <!-- English -->
             <div class="lang-content active" id="about-en">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-image">
-                        <div class="profile-img">
-                            <img src="/Files/Images/profile.jpg" alt="Diego Pilares Gallego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="profile-img-fallback" style="display: none;">🏎️</div>
+                <div class="section-label">About</div>
+                <div class="about-grid">
+                    <div>
+                        <div class="profile-card reveal">
+                            <div class="profile-img-wrap">
+                                <div class="profile-img-inner">
+                                    <img src="/Files/Images/profile.jpg" alt="Diego Pilares Gallego"
+                                         onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                                    <span class="profile-img-fallback" style="display:none">🏎️</span>
+                                </div>
+                            </div>
+                            <div class="profile-name">Diego Pilares Gallego</div>
+                            <div class="profile-role">Motorsport Engineer</div>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">MSc</span>
+                                    <span class="stat-label">Merit</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">BEng</span>
+                                    <span class="stat-label">2:1 Equiv.</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">10+</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">3</span>
+                                    <span class="stat-label">Languages</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="about-text">
-                        <h3>Engineering meets passion</h3>
-                        <p>What began as a childhood fascination with understanding how things work, tinkering with, dismantling and reassembling everything around me, has evolved into a career focused on high-performance automotive engineering.</p>
-                        <p>After completing my automotive engineering degree in Madrid, where I was fortunate enough to study at the Motor & Sport Institute, home to one of the largest motorsport teams in Spain, I went on to earn my MSc in Motorsport Engineering at Oxford Brookes University, enhancing my knowledge and targeting distinction-level performance.</p>
-                        <p>My experience spans Formula Student teams, vehicle dynamics research, CAD design, and data analysis. From hydrogen engine optimization to brake system development, I enjoy tackling diverse engineering challenges across motorsport and automotive applications.</p>
-                        <div class="skills-preview">
-                            <span class="skill-tag">Vehicle Dynamics</span>
-                            <span class="skill-tag">AVL VSM</span>
-                            <span class="skill-tag">SolidWorks</span>
-                            <span class="skill-tag">GT-Suite</span>
-                            <span class="skill-tag">MSC Adams</span>
-                            <span class="skill-tag">Data Analysis</span>
+                    <div class="about-text-block">
+                        <h3>Engineering meets <em>passion</em></h3>
+                        <p>
+                            What began as a childhood fascination with understanding how things work — tinkering, dismantling, reassembling everything around me — has evolved into a career focused on high-performance automotive engineering.
+                        </p>
+                        <p>
+                            After earning my BEng at the Motor &amp; Sport Institute in Madrid, one of Spain's most renowned motorsport programs, I went on to complete my MSc in Motorsport Engineering at Oxford Brookes University — deepening my expertise in vehicle dynamics, advanced simulation, and race engineering.
+                        </p>
+                        <p>
+                            Currently working as a <em>Test Methodology Engineer</em> at CT Ingenieros – HORSE Powertrain, developing test methodologies for chassis dyno, robotized chassis dyno and PEMS tests in AVL and Horiba environments.
+                        </p>
+                        <div class="skills-wrap">
+                            <span class="skill-chip">Vehicle Dynamics</span>
+                            <span class="skill-chip">AVL VSM</span>
+                            <span class="skill-chip">GT-Suite</span>
+                            <span class="skill-chip">Race Engineering</span>
+                            <span class="skill-chip">CFD</span>
+                            <span class="skill-chip">SolidWorks</span>
+                            <span class="skill-chip">MSC Adams</span>
+                            <span class="skill-chip">Star CCM+</span>
+                            <span class="skill-chip">MATLAB</span>
+                            <span class="skill-chip">HyperMesh</span>
+                            <span class="skill-chip">MoTeC i2</span>
+                            <span class="skill-chip">CATIA V5</span>
+                            <span class="skill-chip">XFLR5</span>
+                            <span class="skill-chip">AVL Drive Race</span>
+                            <span class="skill-chip">Femap</span>
+                            <span class="skill-chip">LTSpice</span>
+                            <span class="skill-chip">Granta Materials</span>
+                            <span class="skill-chip">Composite Design</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Spanish Content -->
+            <!-- Spanish -->
             <div class="lang-content" id="about-es">
-                <h2 class="section-title">Acerca de Mí</h2>
-                <div class="about-content">
-                     <div class="about-image">
-                        <div class="profile-img">
-                            <img src="/Files/Images/profile.jpg" alt="Diego Pilares Gallego" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="profile-img-fallback" style="display: none;">🏎️</div>
+                <div class="section-label">Sobre Mí</div>
+                <div class="about-grid">
+                    <div>
+                        <div class="profile-card reveal">
+                            <div class="profile-img-wrap">
+                                <div class="profile-img-inner">
+                                    <img src="/Files/Images/profile.jpg" alt="Diego Pilares Gallego"
+                                         onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                                    <span class="profile-img-fallback" style="display:none">🏎️</span>
+                                </div>
+                            </div>
+                            <div class="profile-name">Diego Pilares Gallego</div>
+                            <div class="profile-role">Ingeniero del Motorsport</div>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">MSc</span>
+                                    <span class="stat-label">Mérito</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">BEng</span>
+                                    <span class="stat-label">6.91/10</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">10+</span>
+                                    <span class="stat-label">Proyectos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">3</span>
+                                    <span class="stat-label">Idiomas</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="about-text">
-                        <h3>La ingeniería encuentra la pasión</h3>
-                        <p>Lo que comenzó como una fascinación infantil por comprender cómo funcionan las cosas, trastear, desmontar y volver a montar todo lo que me rodeaba, se ha convertido en una carrera centrada en la ingeniería automovilística de alto rendimiento.</p>
-                        <p>Tras completar mi grado en ingeniería industrial con mención en automoción en Madrid, donde tuve la suerte de estudiar en el Motor & Sport Institute, sede de uno de los equipos de Motorsport más grandes a nivel nacional, continué mis estudios y obtuve un máster en Ingeniería del Motorsport en la Universidad Oxford Brookes, ampliando mis conocimientos y apuntando al nivel de distinción.</p>
-                        <p>Mi experiencia abarca equipos Formula Student, investigación en dinámica vehicular, diseño CAD y análisis de datos. Desde optimización de motores de hidrógeno hasta desarrollo de sistemas de frenos, disfruto enfrentando diversos desafíos de ingeniería en aplicaciones de motorsport y automoción.</p>
-                        <div class="skills-preview">
-                            <span class="skill-tag">Dinámica Vehicular</span>
-                            <span class="skill-tag">AVL VSM</span>
-                            <span class="skill-tag">SolidWorks</span>
-                            <span class="skill-tag">GT-Suite</span>
-                            <span class="skill-tag">MSC Adams</span>
-                            <span class="skill-tag">Análisis de Datos</span>
+                    <div class="about-text-block">
+                        <h3>La ingeniería encuentra la <em>pasión</em></h3>
+                        <p>
+                            Lo que comenzó como una fascinación infantil por entender cómo funcionan las cosas —trastear, desmontar y volver a montar todo lo que me rodeaba— se ha convertido en una carrera centrada en la ingeniería automovilística de alto rendimiento.
+                        </p>
+                        <p>
+                            Tras completar mi grado en el Motor &amp; Sport Institute de Madrid, uno de los programas de motorsport más reconocidos de España, cursé el Máster en Ingeniería del Motorsport en Oxford Brookes University, profundizando en dinámica vehicular, simulación avanzada e ingeniería de carreras.
+                        </p>
+                        <p>
+                            Actualmente trabajo como <em>Ingeniero de Metodología de Ensayos</em> en CT Ingenieros – HORSE Powertrain, desarrollando metodologías de ensayo para banco de rodillos, banco de rodillos robotizado y ensayos PEMS en entornos AVL y Horiba.
+                        </p>
+                        <div class="skills-wrap">
+                            <span class="skill-chip">Dinámica Vehicular</span>
+                            <span class="skill-chip">AVL VSM</span>
+                            <span class="skill-chip">GT-Suite</span>
+                            <span class="skill-chip">Ing. de Carreras</span>
+                            <span class="skill-chip">CFD</span>
+                            <span class="skill-chip">SolidWorks</span>
+                            <span class="skill-chip">MSC Adams</span>
+                            <span class="skill-chip">Star CCM+</span>
+                            <span class="skill-chip">MATLAB</span>
+                            <span class="skill-chip">HyperMesh</span>
+                            <span class="skill-chip">MoTeC i2</span>
+                            <span class="skill-chip">CATIA V5</span>
+                            <span class="skill-chip">XFLR5</span>
+                            <span class="skill-chip">AVL Drive Race</span>
+                            <span class="skill-chip">Femap</span>
+                            <span class="skill-chip">LTSpice</span>
+                            <span class="skill-chip">Granta Materials</span>
+                            <span class="skill-chip">Diseño Compuestos</span>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ─── QUICK LINKS ──────────────────────────────────────── -->
+    <section class="quick-links">
+        <div class="container">
+
+            <!-- English -->
+            <div class="lang-content active" id="nav-en">
+                <div class="section-label">Explore</div>
+                <div class="links-grid">
+                    <a href="education.html" class="link-card reveal reveal-delay-1">
+                        <div class="link-card-eyebrow">Academic</div>
+                        <div class="link-card-title">Education</div>
+                        <p class="link-card-desc">MSc Motorsport Engineering at Oxford Brookes &amp; BEng at Motor &amp; Sport Institute, Madrid.</p>
+                        <div class="link-card-arrow">→</div>
+                    </a>
+                    <a href="projects.html" class="link-card reveal reveal-delay-2">
+                        <div class="link-card-eyebrow">Portfolio</div>
+                        <div class="link-card-title">Projects</div>
+                        <p class="link-card-desc">10+ engineering projects spanning CFD, vehicle dynamics, simulation, and advanced design.</p>
+                        <div class="link-card-arrow">→</div>
+                    </a>
+                    <a href="cv.html" class="link-card reveal reveal-delay-3">
+                        <div class="link-card-eyebrow">Career</div>
+                        <div class="link-card-title">CV</div>
+                        <p class="link-card-desc">Full curriculum vitae with experience at Oxford Brookes Racing, NTT DATA, and UFV Racing.</p>
+                        <div class="link-card-arrow">→</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Spanish -->
+            <div class="lang-content" id="nav-es">
+                <div class="section-label">Explora</div>
+                <div class="links-grid">
+                    <a href="education.html" class="link-card reveal reveal-delay-1">
+                        <div class="link-card-eyebrow">Académico</div>
+                        <div class="link-card-title">Educación</div>
+                        <p class="link-card-desc">Máster en Ingeniería del Motorsport en Oxford Brookes y Grado en el Motor &amp; Sport Institute, Madrid.</p>
+                        <div class="link-card-arrow">→</div>
+                    </a>
+                    <a href="projects.html" class="link-card reveal reveal-delay-2">
+                        <div class="link-card-eyebrow">Portafolio</div>
+                        <div class="link-card-title">Proyectos</div>
+                        <p class="link-card-desc">Más de 10 proyectos de ingeniería en CFD, dinámica vehicular, simulación y diseño avanzado.</p>
+                        <div class="link-card-arrow">→</div>
+                    </a>
+                    <a href="cv.html" class="link-card reveal reveal-delay-3">
+                        <div class="link-card-eyebrow">Carrera</div>
+                        <div class="link-card-title">CV</div>
+                        <p class="link-card-desc">Currículum completo con experiencia en Oxford Brookes Racing, NTT DATA y UFV Racing.</p>
+                        <div class="link-card-arrow">→</div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ───────────────────────────────────────────── -->
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="mailto:dpilares01@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/diegopilares/" target="_blank">LinkedIn</a>
-            </div>
-            <!-- English Content -->
-            <div class="lang-content active" id="footer-en">
-                <p>&copy;All rights reserved 2025 Diego Pilares Gallego | Engineering Portfolio</p>
-            </div>
-            <!-- Spanish Content -->
-            <div class="lang-content" id="footer-es">
-                <p>&copy;Todos los derechos reservados 2025 Diego Pilares Gallego | Portafolio de Ingeniería</p>
+            <div class="footer-inner">
+                <div class="footer-logo">DPG<span>.</span></div>
+                <ul class="footer-links">
+                    <li><a href="mailto:dpilares01@gmail.com">dpilares01@gmail.com</a></li>
+                    <li><a href="https://www.linkedin.com/in/diegopilares/" target="_blank" rel="noopener">LinkedIn</a></li>
+                </ul>
+                <div class="lang-content active footer-copy" id="footer-en">
+                    © 2025 Diego Pilares Gallego
+                </div>
+                <div class="lang-content footer-copy" id="footer-es">
+                    © 2025 Diego Pilares Gallego
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Language switching functionality
-        function switchLanguage(lang) {
-            // Hide all language content
-            const langContents = document.querySelectorAll('.lang-content');
-            langContents.forEach(content => content.classList.remove('active'));
-            
-            // Show selected language content
-            const selectedContents = document.querySelectorAll(`#hero-${lang}, #about-${lang}, #footer-${lang}`);
-            selectedContents.forEach(content => content.classList.add('active'));
-            
-            // Update navigation links
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                const text = link.getAttribute(`data-${lang}`);
-                if (text) {
-                    link.textContent = text;
-                }
-            });
-            
-            // Update language buttons
-            const langButtons = document.querySelectorAll('.lang-btn');
-            langButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Find and activate the correct button
-            const activeBtn = Array.from(langButtons).find(btn => 
-                btn.textContent.toLowerCase() === lang.toLowerCase()
-            );
-            if (activeBtn) {
-                activeBtn.classList.add('active');
-            }
-            
-            // Update document language
-            document.documentElement.lang = lang;
-        }
+        // ── Skills data ───────────────────────────────────────
+        // ── Scroll nav style ──────────────────────────────────
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
 
-        // Mobile menu toggle
+        // ── Mobile menu ───────────────────────────────────────
         function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            document.getElementById('navLinks').classList.toggle('open');
         }
 
-        // Smooth scrolling for anchor links
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const target = document.getElementById(targetId);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        });
+        // ── Language switch ───────────────────────────────────
+        const langSections = {
+            en: ['hero-en','about-en','nav-en','footer-en'],
+            es: ['hero-es','about-es','nav-es','footer-es']
+        };
 
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (nav) {
-                if (window.scrollY > 100) {
-                    nav.style.background = 'rgba(0, 0, 0, 0.98)';
-                } else {
-                    nav.style.background = 'rgba(0, 0, 0, 0.95)';
-                }
-            }
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            langSections[lang].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('active');
+            });
+            document.querySelectorAll('.nav-link').forEach(a => {
+                const t = a.getAttribute('data-' + lang);
+                if (t) a.textContent = t;
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+            });
+            document.documentElement.lang = lang;
+            try { localStorage.setItem('preferredLanguage', lang); } catch(e) {}
+        }
+
+        // ── Scroll-reveal ─────────────────────────────────────
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // ── Init (single DOMContentLoaded) ────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            // Restore language preference
+            try {
+                const lang = localStorage.getItem('preferredLanguage') || 'en';
+                if (lang === 'es') switchLanguage('es');
+            } catch(e) {}
+
         });
     </script>
 </body>
-
-
 </html>
